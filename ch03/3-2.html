@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2. 선택자 우선순위</title>
+    <style>
+        *{
+            color:red;
+        }
+        li{
+            color:green !important; 
+        } 
+        .ko{
+            color:blue;
+        }
+        .dg{
+            color:hotpink;
+        }
+        #dg{
+            color:violet;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <h3>2. 선택자 우선순위</h3>
+
+    <ol>
+        <li class="ko se">서울</li>
+        <li class="ko dj">대전</li>
+        <li id="dg" class="ko dg" style="color:skyblue;">대구</li>
+        <li class="bs">부산</li>
+        <li class="gj">광주</li>
+    </ol>
+    <!--최우선 !important 그다음 폰트에 직접 스타일 그 다음 이름 순으로-->
+
+
+    
+</body>
+</html>

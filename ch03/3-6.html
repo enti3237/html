@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6. 속성 선택자</title>
+    <style>
+        img[alt=flower1]{width:200px;}
+        img[alt=flower2]{width:300px;}
+        img[alt=flower3]{width:400px;}
+
+        /* 인라인 타입도 가로세로 설정이 가능함 */
+        input[name=uid]{
+            width:200px;
+            height:50px;
+            } 
+
+        /* 이거슨 구조선택자이다
+        img:nth-child(2){width:100px;}
+        img:nth-of-type(3){width:200px;} 
+        */
+
+    </style>
+</head>
+<body>
+    <h3>6. 속성 선택자</h3>
+
+    <img src="../ch02/img/flower1.jpg" alt="flower1">
+    <img src="../img/flower2.jpg" alt="flower2">
+    <img src="../img/flower3.jpg" alt="flower3">
+    <hr noshade>
+    <input type="text" name="uid" placeholder="아이디를 입력하세요">
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>입력양식 태그</title>
+</head>
+<body>
+    <h3>6. 입력양식 태그</h3>
+    <!--이동한 후의 웹주소를 잘 보시오 'ㅇ'-->
+    <form action="http://naver.com"> <!--아이디와 비번을 전송할 서버주소-->
+        <input type="text" name="uid" placeholder="아이디를 입력하세요."/><br>
+        <input type="password" name="pass" placeholder="비밀번호를 입력하세요."/>
+        <input type="submit" value="로그인"/>
+    </form>
+
+    <h4>다양한 입력필드</h4>
+    <form action="http://daum.net" target="blank">
+        <h3>취미를 선택하세요.</h3> 
+        <!--label로 묶어야 체크박스와 텍스트가 하나로 취급됨-->
+        <label><input type="checkbox" name="chk1" value="1">등산</label>
+        <label><input type="checkbox" name="chk2" value="2">독서</label>
+        <label><input type="checkbox" name="chk3" value="3">게임</label>
+        <label><input type="checkbox" name="chk4" value="4">영화</label>
+
+        <h3>성별을 고르세요.</h3>
+        <!--radio는 하나만 선택 가능-->
+        <label><input type="radio" name="gender" value="1">남자</label>
+        <label><input type="radio" name="gender" value="2">여자</label>
+
+        <h3>지역을 선택하세요.</h3>
+        <select name="local">
+            <option>서울</option>
+            <option>대전</option>
+            <option>대구</option>
+            <option>부산</option>
+            <option>광주</option>
+        </select>
+
+        <h3>날짜를 고르세요.</h3>
+        <input type="date" name="date">
+        <p></p>
+
+        <input type="submit" value="전송하기">
+    </form>
+
+    <h4>자기소개</h4>
+    <form action="http://google.co.kr" tagert="_blank" method="GET">
+    <textarea name="intro" cols="30" rows="10"></textarea>
+    <input type="submit" value="전송하기">
+
+</form>
+
+</body>
+</html>

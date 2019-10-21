@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1. display 속성</title>
+    <style>
+    /* display : none 
+    브라우저에서 태그 요소를 공간 포함 아예 제거함
+    visibility: hidden 은 그냥 보이지 않게 함 */
+    .ex1 > span:nth-child(2){
+        display:none;
+    }
+
+    /* display : block 
+    인라인 태그를 블럭 태그로 변환한다 */
+    .ex2 > span {
+        background : orange;
+    }
+    .ex2 > span:nth-child(2){
+        display:block;
+    }
+
+    /* display : inline
+    블럭 태그를 인라인 태그로 변환하는 거겠죠 물론 */
+    .ex3 > div {
+        display:inline;
+    }
+
+    /* display : inline-block
+    인라인이나 블럭 태그를 인라인-블럭태그로 변환 */
+    .ex4 > span {
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        background : orange;
+    }
+    .ex4 > div {
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        background : yellow;
+    }
+    </style>
+
+</head>
+<body>
+    <h3>1. display 속성</h3>
+
+    <h4>none</h4>
+    <div class="ex1">
+        <span>TEXT1</span>
+        <span>TEXT2</span>
+        <span>TEXT3</span>
+    </div>
+
+    <h4>block</h4>
+    <div class="ex2">
+        <span>TEXT1</span>
+        <span>TEXT2</span>
+        <span>TEXT3</span>
+    </div>
+    
+    <h4>inline</h4>
+    <div class="ex3">
+        <span>TEXT1</span>
+        <div>TEXT2</div>
+        <span>TEXT3</span>
+    </div>
+
+    <h4>inline-block</h4>
+    <div class="ex4">
+        <span>TEXT1</span>
+        <div>TEXT2</div>
+        <span>TEXT3</span>
+    </div>
+    
+</body>
+</html>

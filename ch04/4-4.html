@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4. 폰트속성</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Sunflower:300&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Sunflower:300|Sunshiney&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Sunflower:300|Sunshiney|Yeon+Sung&display=swap');
+
+    /* 1) font-size */
+    article:nth-of-type(1)>div:nth-child(1) { font-size: 16px; }
+    article:nth-of-type(1)>div:nth-child(2) { font-size: 32px; }
+    article:nth-of-type(1)>div:nth-child(3) { font-size: 200%; }
+    article:nth-of-type(1)>div:nth-child(4) { font-size: 2em; }
+    article:nth-of-type(1)>div:nth-child(5) { font-size: 2rem; }
+
+    /* 2) font-family */
+    article:nth-of-type(2) {font-size: 32px;}
+    article:nth-of-type(2)>div:nth-child(1) { font-family:'한컴 쿨재즈 B'; }
+    article:nth-of-type(2)>div:nth-child(2) { font-family:'BroadwayEngraved BT'; }
+    article:nth-of-type(2)>div:nth-child(3) { font-family:'Sunflower'; }
+    article:nth-of-type(2)>div:nth-child(4) { font-family:'Sunshiney'; }
+    article:nth-of-type(2)>div:nth-child(5) { font-family:'Yeon Sung'; }
+
+    /* 3) font-weight */
+    article:nth-of-type(3)>div:nth-child(1) { font-weight: 100; }
+    article:nth-of-type(3)>div:nth-child(2) { font-weight: 500; }
+    article:nth-of-type(3)>div:nth-child(3) { font-weight: bold; }
+    article:nth-of-type(3)>div:nth-child(4) { font-weight: bolder; }
+    article:nth-of-type(3)>div:nth-child(5) { font-weight: normal; }
+    
+    /* 4) font */
+    article:nth-of-type(4)>div:nth-child(1) {font: normal 12px 'Sunflower';}
+    article:nth-of-type(4)>div:nth-child(2) {font: normal  2em '고딕';}
+    article:nth-of-type(4)>div:nth-child(3) {font: 200     2em '고딕';}
+    article:nth-of-type(4)>div:nth-child(4) {font: bold   16px '맑은고딕';}
+    article:nth-of-type(4)>div:nth-child(5) {font: normal 24px 'Sunflower';}
+    
+    /* 5) line-height 줄간격(행간) */
+    p {
+        line-height: 25px;
+    }
+    section {
+        width: 200px;
+        height: 160px;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 160px; /*높이와 같은 값을 주면 수직정렬이 됨*/
+    }
+    
+    </style>
+</head>
+<body>
+    <h3>4. 폰트속성</h3>
+
+    <h4>1)font-size</h4>
+    <article>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+    </article>
+
+    <h4>2)font-family</h4>
+    <article>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+    </article>
+
+    <h4>3)font-weight</h4>
+    <article>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+    </article>
+
+    <h4>4)font</h4>
+    <article>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+        <div>Hello, 안녕하세요.</div>
+    </article>
+
+    <h4>5)line-height</h4>
+    <p>
+        동해물과 백두산이 마르고 닳도록<br>
+        하느님이 보우하사 우리나라 만세<br>
+        무궁화 삼천리 화려강산<br>
+        대한사람 대한으로 길이 보전하세.<br>
+    </p>
+    <section>수직 가운데 정렬</section>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+</body>
+</html>

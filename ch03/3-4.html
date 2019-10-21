@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4. 형제 선택자</title>
+    <style>
+        .seoul + li + li {
+            color:red;
+        } /*한칸씩 아래로*/
+        .busan ~ li {
+            background:orange;
+        } /*이하 전부*/
+    
+    </style>
+</head>
+<body>
+    <h3>4. 형제 선택자</h3>
+    <ul>
+        <li class="seoul">서울</li>
+        <li>대전</li>
+        <li>대구</li>
+        <li class="busan">부산</li>
+        <li>광주</li>
+    </ul>
+</body>
+</html>

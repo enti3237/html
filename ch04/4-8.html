@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8. 레이아웃 설계하기</title>
+    <style>
+    #wrapper {
+        width: 980px;
+        height: auto;
+        border: 1px solid #999;
+        margin: 0 auto;
+    }
+    header {
+        width: 100%;
+        height: 142px;
+        border: 1px dashed #ccc;
+    }
+    main {
+        width: 100%;
+        height: auto;
+        border: 1px dashed #ccc;
+        overflow: hidden;
+    }
+    main>aside {
+        width: 18%;
+        height: 500px;
+        border: 1px dotted red;
+        box-sizing: border-box;
+        float: left;
+    }
+    main>article {
+        width: 82%;
+        height: 500px;
+        border: 1px dotted blue;
+        box-sizing: border-box;
+        float: left;
+    }
+    footer {
+        width: 100%;
+        height: 142px;
+        border: 1px dashed #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Header</h1>
+        </header>
+        <main>
+            <aside><h1>aside</h1></aside>
+            <article><h1>
+                <ul>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                </ul>
+            </h1></article>
+        </main>
+        <footer><h1>footer</h1></footer>
+    </div>
+    
+</body>
+</html>

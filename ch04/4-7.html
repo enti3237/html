@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7. 연습문제</title>
+    <style>
+    .box {
+        width: 300px;
+        height: 300px;
+        border: 1px dashed black;
+        position: relative;
+    }
+
+    .box1 > div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+        right:0px; top: 0px;
+    }
+
+    .box2 > div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+        right:0px; bottom: 0px;
+    }
+
+    .box3 > div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+        right:0px; top: 0px;
+    }
+    .box3 > div > div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: blue;
+        right: 0px; bottom: 0px;
+    }
+
+    .box4 > div  {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+        left:0px; bottom: 0px;
+    }
+    .box4 > div > div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: blue;
+        left: 0px; bottom: 0px;
+    }
+
+    .box5 > div {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+        margin: 0 auto;}
+    .box5 > div > div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: blue;
+        top:50%; 
+        left:50%;
+        transform: translate(-50%, -50%);}
+
+    .box6 > div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+        left:50%;
+        top:50%; 
+        transform: translate(-50%, -50%);
+        }
+    .box6 > div > div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: blue;
+        top:50%; 
+        left:50%;
+        transform: translate(-50%, -50%);
+        }
+
+    .box7 > div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        }
+    .box7 > div:nth-child(1) {background: red; left:100px; top:0;}
+    .box7 > div:nth-child(2) {background: greenyellow; left:0; top:100px;}
+    .box7 > div:nth-child(3) {background: blue; right:0px; top:100px;}
+    .box7 > div:nth-child(4) {background: orange; left:100px; bottom:0;}
+
+    .box8 > div {
+        width: 100px;
+        height: 100px;
+        }
+    .box8 > div:nth-child(1) {float:left;  background: red;}
+    .box8 > div:nth-child(2) {float:right; background: greenyellow;}
+    .box8 > div:nth-child(3) {float:left;  clear:left; transform: translate(100%); background: orange; }
+    .box8 > div:nth-child(4) {clear:left;  float:left; background: grey;}
+    .box8 > div:nth-child(5) {float:right; background: blue;}
+
+    .box9 > div {
+        float:left;
+        width: 100px;
+        height: 100px;
+        }
+    .box9 > div:nth-child(1) {background: red;}
+    .box9 > div:nth-child(2) {background: greenyellow;}
+    .box9 > div:nth-child(3) {clear:left; background: orange; }
+
+    .box10 > div {
+        float:right;
+        width: 100px;
+        height: 100px;
+        }
+    .box10 > div:nth-child(1) {background: red;}
+    .box10 > div:nth-child(2) {background: greenyellow;}
+    .box10 > div:nth-child(3) {clear:right; background: orange; }
+
+    .box11 > div {
+        float:left;
+        width: 100px;
+        height: 100px;
+        }
+    .box11 > div:nth-child(1) {background: red;}
+    .box11 > div:nth-child(2) {background: greenyellow;}
+    .box11 > div:nth-child(3) {background: orange; }
+    .box11 > div:nth-child(4) {clear:left; background: blue; }
+    .box11 > div:nth-child(5) {background: violet; }
+    .box11 > div:nth-child(6) {clear:left; background: grey; }
+
+</style>
+</head>
+
+<body>
+    <h3>문제 1.</h3>
+    <div class="box box1">
+        <div></div>
+    </div>
+
+    <h3>문제 2.</h3>
+    <div class="box box2">
+        <div></div>
+    </div>
+
+    <h3>문제 3.</h3>
+    <div class="box box3">
+        <div>
+            <div></div>
+        </div>
+    </div>
+    
+    <h3>문제 4.</h3>
+    <div class="box box4">
+        <div>
+            <div></div>
+        </div>
+    </div>
+
+    <h3>문제 5.</h3>
+    <div class="box box5">
+        <div>
+            <div></div>
+        </div>
+    </div>
+
+    <h3>문제 6.</h3>
+    <div class="box box6">
+        <div>
+            <div></div>
+        </div>
+    </div>
+
+    <h3>문제 7.</h3>
+    <div class="box box7">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h3>문제 8.</h3>
+    <div class="box box8">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h3>문제 9.</h3>
+    <div class="box box9">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h3>문제 10.</h3>
+    <div class="box box10">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h3>문제 11.</h3>
+    <div class="box box11">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+</html>

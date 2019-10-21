@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FarmStory</title>
+    
+    <style>
+    /* 기존 태그 초기화 (필수작업)
+    - 폰트의 경우 all 선택인 *로 지정할 수도 있지만 body 지정이 좀 더 유연한 편 */
+    *       {margin: 0;
+             padding: 0;}
+    body    {font: normal 12px "굴림";}
+    ul, ol  {list-style: none;}
+    a       {text-decoration: none; color:#111;}
+
+    /* wrapper */
+    #wrapper {
+        width: 980px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* 헤더 */
+    header {
+        position: relative;
+        width: 100%;
+        height: 142px;
+        background: url('./img/head_top_line.png') no-repeat;
+    }
+    header > .logo {
+        /* margin: 0, auto; 블럭용 명령이라 안 먹힘 */ 
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        margin-left: -95px;
+    }
+    header > p {
+        float: right ;
+        margin-top: 16px;
+    }
+    header > p > a {
+        margin-right: 4px;
+    }
+    header > img {
+        position: absolute;
+        right: 4px;
+        top: 56px;
+    }
+    header > .gnb {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        left: 0px;
+        bottom: 0px;
+    }
+    header > .gnb > li {
+        float: left;
+        width: 20%;
+        height: 50px;
+        border-left: 1px solid transparent;
+        border-right: 1px solid white;
+        box-sizing: border-box;        
+    }
+    header > .gnb > li img {
+        margin-left: 100px;
+        margin-top: -16px;
+    }
+    /* 이 배너가 li 밖으로 튀어나오게 하기 위해선 overflow:hidden을 삭제하고 li의 세로값을 고정으로 줘야한다 */
+
+    header > .gnb > li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-top: 3px solid #3f3f3f;
+        font-size: 0px;
+        background-repeat: no-repeat;
+        background-position: center 6px;
+        box-sizing: border-box;
+    }
+
+    header > .gnb > li:nth-child(1) > a {background-image: url('./img/head_menu1.png');}
+    header > .gnb > li:nth-child(2) > a {background-image: url('./img/head_menu2.png');}
+    header > .gnb > li:nth-child(3) > a {background-image: url('./img/head_menu3.png');}
+    header > .gnb > li:nth-child(4) > a {background-image: url('./img/head_menu4.png');}
+    header > .gnb > li:nth-child(5) > a {background-image: url('./img/head_menu5.png');}
+
+    header > .gnb > li:nth-child(1) > a:hover {background-image: url('./img/head_menu1_ov.png');}
+    header > .gnb > li:nth-child(2) > a:hover {background-image: url('./img/head_menu2_ov.png');}
+    header > .gnb > li:nth-child(3) > a:hover {background-image: url('./img/head_menu3_ov.png');}
+    header > .gnb > li:nth-child(4) > a:hover {background-image: url('./img/head_menu4_ov.png');}
+    header > .gnb > li:nth-child(5) > a:hover {background-image: url('./img/head_menu5_ov.png');}
+
+    /* 메인 */
+    main{
+        width: 100%;
+        height: auto;
+    }
+    main > div {
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid green;
+        box-sizing: border-box;
+    }
+    main > div.slider {
+        position: relative;
+        height: 312px;
+    }
+    main > .slider > .slogan {
+        position: absolute;
+        left: 30px;
+        top: 30px;
+        z-index: 100;
+    }
+    /* 높이를 주는 방법 z-index */
+    main > .slider > ul {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* float가 아니라 position! */
+    main > .slider > ul > li {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    main > .slider > ul > li:nth-child(1) {left: 0px; top: 0px;}
+    main > .slider > ul > li:nth-child(2) {left: 100%; top: 0px;}
+    main > .slider > ul > li:nth-child(3) {left: 200%; top: 0px;}
+
+    main > .slider > .banner {
+        position: absolute;
+        width: 230px;
+        height: 100%;
+        right: 0px;
+        top: 0px;
+        background: url('img/main_banner_bg.jpg') no-repeat;
+        z-index:100; /*밑에 있어서 안 올려도 되긴 함*/
+    }
+    main > .slider > .banner > img {position: absolute;}
+    main > .slider > .banner > img:nth-child(1) {top:5px; right:5px;}
+    main > .slider > .banner > img:nth-child(2) {top: 25px; left: 10px;}
+    main > .slider > .banner > img:nth-child(3) {bottom: 10px; left: 10px;}
+
+    main > div.quick {
+        height: 74px;
+    }
+    main > div.latest {
+        height: 186px;
+    }
+    main > div.info {
+        height: 144px;
+    }
+
+    /* 푸터 */
+    footer {
+        width: 100%;
+        height: 118px;
+        margin-top: 10px;
+        border-top: 1px solid #c5bd9f;
+        box-sizing: border-box;
+    }
+
+    footer > p {
+        float: right ;
+        margin-top: 20px;
+        margin-right: 10px;
+        font-size: 11px;
+        color: #585858; 
+        line-height: 17px;
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <a href="http://wppremium02.hubweb.net" class="logo"><img src="img/logo.png" alt=""></a>
+                <p>
+                   <a href="">Home</a>
+                   <a href="">로그인</a>
+                   <a href="">회원가입</a>
+                   <a href="">고객센터</a>
+                </p>
+            <img src="img/head_txt_img.png" alt="3만원 이상 무료배송, 팜카드 10% 적립">
+
+            <ul class="gnb">
+                <li><a href="#">팜스토리 소개</a></li>
+                <li><a href="#"><img src="img/head_menu_badge.png" alt="30%">장보기</a></li>
+                <li><a href="#">농작물 이야기</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">커뮤니티</a></li>
+            </ul>
+
+        </header>
+
+        <main>
+            <div class="slider">
+                <img src="img/main_slide_img_tit.png" class="slogan" alt="사람과 자연을 사랑하는 팜스토리">
+                <!-- 태그출력은 위에서 아래기 때문에 그림 위에 올리려면 그냥 아래에 둬도 되긴 한다 ㅇ_) -->
+                <ul>
+                    <li><img src="img/main_slide_img1.jpg" alt="slide1"></li>
+                    <li><img src="img/main_slide_img2.jpg" alt="slide2"></li>
+                    <li><img src="img/main_slide_img3.jpg" alt="slide3"></li>
+                </ul>
+
+                <div class="banner">
+                    <img src="img/main_banner_txt.png" alt="grand oped">
+                    <img src="img/main_banner_tit.png" alt="30%할인이벤트">
+                    <img src="img/main_banner_img.png" alt="이미지">
+                </div>
+
+            </div>
+            <div class="quick">
+                <img src="img/main_banner_sub1_bg.jpg">
+                <img src="img/main_banner_sub2_bg.jpg">
+            </div>
+            <div class="latest">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="info">
+                <div></div>
+                <div></div>
+            </div>
+        </main>
+        <footer>
+            <img src="img/footer_logo.png" alt="로고">
+
+            <p>(주)더조은 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-팜스토리구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br/>
+                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br/>
+                대표 : 홍길동 / 이메일 : email@mail.mail / 전화 : 01) 234-5678 / 부산시 부산진구 부전동<br/>
+                <strong>(C)홍길동 All rights reserved.</strong>
+            </p>
+
+        </footer>
+    </div>
+</body>
+</html>

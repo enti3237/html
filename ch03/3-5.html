@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5. 구조선택자</title>
+    <style>
+        /* 구조선택자 */
+        body>ul:nth-child(2)>li:first-child {
+            color:red;
+        } 
+        /* body는 생략가능 */
+        ul:nth-child(3)>li:nth-child(2) {
+            color:blue;
+        }
+        /* first, last 외엔 전부 nth () -first와 last도 숫자로 써도 됨 */
+        ul:nth-child(2)>li:last-child {
+            color:greenyellow;
+        }
+        /* nth-of-type으로 종류별로 나눌 수도 있다 */
+        ul:nth-of-type(2)>li:nth-of-type(1){
+            color:hotpink;
+        }
+        /* nth-last-child는 뒤에서부터 센다 */
+        ul:nth-of-type(2)>li:nth-last-child(2){
+            background:yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>5. 구조선택자</h3>
+
+    <ul>
+        <li>서울</li>
+        <li>대전</li>
+        <li>대구</li>
+        <li>부산</li>
+        <li>광주</li>
+    </ul>
+   
+    <ul>
+        <li>수원</li>
+        <li>창원</li>
+        <li>천안</li>
+        <li>목포</li>
+        <li>김해</li>
+    </ul>
+   
+    
+</body>
+</html>
