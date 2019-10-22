@@ -98,8 +98,6 @@
     main > div {
         width: 100%;
         margin-top: 10px;
-        border: 1px solid green;
-        box-sizing: border-box;
     }
     main > div.slider {
         position: relative;
@@ -142,6 +140,7 @@
     main > .slider > .banner > img:nth-child(2) {top: 25px; left: 10px;}
     main > .slider > .banner > img:nth-child(3) {bottom: 10px; left: 10px;}
 
+    /* 퀵슬라이더 */
     main > div.quick {
         height: 74px;
         overflow: hidden;
@@ -186,9 +185,53 @@
         /* 저 132px는 날짜칸이 어느정도 확보된 것을 전제한다 */
         /* 어차피 최신글보기로 불러와야하지만... */
 
+    /* 인포 */
     main > div.info {
         height: 144px;
+        overflow: hidden;
+        border-top: 2px solid #756c65;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-sizing: border-box;
+        /* article에 border-top을 붙이면 줄이 3개가 되니까 div에 붙인다 */
     }
+
+    main > .info > article {
+        float: left;
+        height: 100%;
+        color:#666;
+        font-size: 11px;
+        line-height: 150%;
+        font-family: "돋움";
+        }
+        
+    main > .info > article:nth-child(1) {width: 39%;}
+
+    main > .info > article:nth-child(1) > img {margin-top: 0px;}
+    main > .info > article:nth-child(1) > div {
+        width: 100%;
+        margin-top: 13px;}
+    main > .info > article:nth-child(1) > div > img:nth-child(1) {
+        float: left;
+        margin-right: 15px;}
+    main > .info > article:nth-child(1) > div > img:nth-child(2) {
+        float: left;
+        margin-right: 15px;}
+    main > .info > article:nth-child(1) > div > ul > li {
+    }
+    
+    main > .info > article:nth-child(2) {
+        width: 23%; 
+        border-left :1px solid #d7d7d7; 
+        border-right:1px solid #d7d7d7;
+        padding-left: 23px;
+        box-sizing: border-box;
+        }
+    main > .info > article:nth-child(2) > img {margin-bottom: 10px;}
+
+
+    main > .info > article:nth-child(3) {width: 38%;}
+
 
     /* 푸터 */
     footer {
@@ -354,8 +397,34 @@
                 </article>
             </div>
             <div class="info">
-                <div></div>
-                <div></div>
+                <article>
+                    <img src="img/main_sub2_cs_tit.png" alt="고객센터안내">
+                    <div>
+                        <img src="img/main_sub2_cs_img.png" alt="전화기">
+                        <img src="img/main_sub2_cs_txt.png" alt="1666-777">
+                        <ul>
+                            <li>평일: AM 09:00 ~ PM 06:00</li>
+                            <li>점심: PM 12:00 ~ PM 01:00</li>
+                            <li>토, 일요일, 공휴일 휴무</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#"><img src="img/main_sub2_cs_bt1.png" alt="고객문의"></a>
+                        <a href="#"><img src="img/main_sub2_cs_bt2.png" alt="자주묻는질문"></a>
+                        <a href="#"><img src="img/main_sub2_cs_bt3.png" alt="배송조회"></a>
+                    </div>
+                </article>
+                <article>
+                    <img src="img/main_sub2_account_tit.png" alt="계좌안내">
+                    <ul>
+                        <li>기업은행 123-456789-01-01-012</li>
+                        <li>국민은행 01-1234-56789</li>
+                        <li>우리은행 123-456789-01-01-012</li>
+                        <li>하나은행 123-456789-01-01</li>
+                        <li>예 금 주 (주)팜스토리</li>
+                    </ul>
+                </article>
+                <article></article>
             </div>
         </main>
         <footer>
