@@ -168,24 +168,23 @@
     main > .latest > article {
         float: left;
         position: relative;
-        display: block;
         width: 33.333%;
         height: 100%;
-        box-sizing: border-box;
-        border: 1px solid pink;
+        }
+    main > .latest > article > * {position: absolute;}
+    main > .latest > article > img:nth-child(1) {left:0px; top:12px;}
+    main > .latest > article > img:nth-child(2) {left:0px; bottom:25px;}
+    main > .latest > article > table {right:16px; bottom:22px; color:#6a6a6a;}
+    main > .latest > article > table tr > td:nth-child(2) {
+        display: block;
+        width: 132px;
+        white-space: nowrap;
         overflow: hidden;
-    }
-    main > .latest > article > img {position: absolute;}
-    main > .latest > article > img:nth-child(1) {top:15px; left:0px;}
-    main > .latest > article > img:nth-child(2) {bottom:15px; left:0px;}
-    main > .latest > article > table {
-        width: 200px;
-        position: absolute; bottom: 15px; right: 10px;
-        line-height: 15px;
-        color: #666;}
-    main > .latest td {
-        padding: 1px;
-        box-sizing: border-box;}
+        text-overflow: ellipsis;
+        line-height: 18px;
+        }
+        /* 저 132px는 날짜칸이 어느정도 확보된 것을 전제한다 */
+        /* 어차피 최신글보기로 불러와야하지만... */
 
     main > div.info {
         height: 144px;
@@ -260,11 +259,75 @@
                 <article>
                     <img src="img/main_latest1_tit.png" alt="텃밭 가꾸기">
                     <img src="img/main_latest1_img.jpg" alt="토마토">
-                    <table>
+                    <table border="0">
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서 맛있게 잘 먹자 냠냠냠</td>
+                            <td>19-03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>건강하게 길러서 맛있게 잘 먹자 냠냠냠</td>
+                            <td>03-28</td>
+                        </tr>
                         <tr>
                             <td>></td>
                             <td>토마토! 건강하게 길러서</td>
                             <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+
+                    </table>
+                </article>
+                <article>
+                    <img src="img/main_latest2_tit.png" alt="귀농학교">
+                    <img src="img/main_latest2_img.jpg" alt="이미지">
+                    <table border="0">
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>19-03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 ddddd d길러서</td>
+                            <td>03-28</td>
+                        </tr>
+
+                    </table>
+                </article>
+                <article>
+                    <img src="img/main_latest3_tit.png" alt="농작물이야기">
+                    <img src="img/main_latest3_img.jpg" alt="이미지">
+                    <table border="0">
+                        <tr>
+                            <td>></td>
+                            <td>토마토! fffffff건강하게 길러서</td>
+                            <td>19-03-28</td>
                         </tr>
                         <tr>
                             <td>></td>
@@ -289,8 +352,6 @@
 
                     </table>
                 </article>
-                <article>귀농학교</article>
-                <article>농작물이야기</article>
             </div>
             <div class="info">
                 <div></div>
