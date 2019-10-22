@@ -144,10 +144,49 @@
 
     main > div.quick {
         height: 74px;
+        overflow: hidden;
+        /* 고정높이를 갖고있어서 float-overflow를 할 필요가 없긴 한데 하면 좋다 */
     }
+    main > .quick > a {
+        float: left;
+        display: block;
+        width: 50%;
+        height: 100%;
+        background-repeat: no-repeat;
+        padding: 10px;
+        box-sizing: border-box;;
+        /* 패딩값을 주면 박스사이즈 값도 꼭 같이 줘야함 */
+    }
+    main > .quick > a:nth-child(1) {background-image: url('img/main_banner_sub1_bg.jpg');}
+    main > .quick > a:nth-child(2) {background-image: url('img/main_banner_sub2_bg.jpg');}
+    
     main > div.latest {
         height: 186px;
+        overflow: hidden;
+        /* 고정높이를 갖고있어서 float-overflow를 할 필요가 없긴 한데 하면 좋다 */
     }
+    main > .latest > article {
+        float: left;
+        position: relative;
+        display: block;
+        width: 33.333%;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid pink;
+        overflow: hidden;
+    }
+    main > .latest > article > img {position: absolute;}
+    main > .latest > article > img:nth-child(1) {top:15px; left:0px;}
+    main > .latest > article > img:nth-child(2) {bottom:15px; left:0px;}
+    main > .latest > article > table {
+        width: 200px;
+        position: absolute; bottom: 15px; right: 10px;
+        line-height: 15px;
+        color: #666;}
+    main > .latest td {
+        padding: 1px;
+        box-sizing: border-box;}
+
     main > div.info {
         height: 144px;
     }
@@ -214,13 +253,44 @@
 
             </div>
             <div class="quick">
-                <img src="img/main_banner_sub1_bg.jpg">
-                <img src="img/main_banner_sub2_bg.jpg">
+                <a href="http://wppremium02.hubweb.net/?page=14"><img src="img/main_banner_sub1_tit.png" alt="오늘의 식단"></a>
+                <a href="http://wppremium02.hubweb.net/?page=15"><img src="img/main_banner_sub2_tit.png" alt=""></a>
             </div>
             <div class="latest">
-                <div></div>
-                <div></div>
-                <div></div>
+                <article>
+                    <img src="img/main_latest1_tit.png" alt="텃밭 가꾸기">
+                    <img src="img/main_latest1_img.jpg" alt="토마토">
+                    <table>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td>토마토! 건강하게 길러서</td>
+                            <td>03-28</td>
+                        </tr>
+
+                    </table>
+                </article>
+                <article>귀농학교</article>
+                <article>농작물이야기</article>
             </div>
             <div class="info">
                 <div></div>
