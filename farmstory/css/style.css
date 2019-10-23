@@ -243,3 +243,108 @@ footer > p {
    color: #585858; 
    line-height: 17px;
 }
+
+/* 서브공통 */
+.sub {
+    width: 100%;
+    height: auto;
+}
+.sub > div {
+    width: 100%;
+}
+.sub > div:nth-child(1){
+    position: relative;
+    width: 100%;
+    height: 184px;
+    background: url('../img/sub_top_bg.jpg') no-repeat;
+} 
+.sub > div:nth-child(1) > img {
+    position: absolute;
+    left:10px; bottom: 10px;
+}
+
+.sub > div:nth-child(2) {
+    width: 100%;
+    overflow: hidden;
+    /* float를 썼으면 꼭 overflow도 쓸 것 */
+}
+.sub .lnb {
+    float: left;
+    width: 18%;
+    min-height: 650px;
+    background: url('../img/sub_aside_bg_line.png') no-repeat;
+    background-position: right top; 
+}
+.sub .lnb > img {
+    margin-top: 16px; 
+    margin-left: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.sub .lnb > ul {
+    width: 175px;
+    height: 233px;
+    padding-top: 30px;
+    background: url('../img/sub_aside_bg_lnb.png') no-repeat;
+}
+.sub .lnb > ul > li {
+    width: 100%;
+    height: 29px;
+    margin-bottom: 6px;
+}
+.sub .lnb a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+
+/* 서브메뉴 - 팜스토리 소개 */
+.sub .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate1_lnb1.png');}
+.sub .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate1_lnb2.png');}
+.sub .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate1_lnb1_ov.png');}
+.sub .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate1_lnb2_ov.png');}
+.sub .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate1_lnb1_ov.png');}
+.sub .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate1_lnb2_ov.png');}
+
+/* 서브메뉴 - 장보기 */
+/* 서브메뉴 - 농작물이야기 */
+/* 서브메뉴 - 이벤트 */
+/* 서브메뉴 - 커뮤니티 */
+
+.sub > div:nth-child(2) > article {
+    float: left;
+    width: 82%;
+    min-height: 650px;
+    padding-left: 42px;
+    box-sizing: border-box;
+}
+
+.sub .content > nav {
+    position: relative;
+    width: 100%;
+    height: 72px;
+    border-bottom: 1px solid #c2c2c2;
+    margin-bottom: 36px;
+    box-sizing: border-box;
+}
+.sub .content > nav > img {
+    position: absolute;
+    left: 0; bottom: 5px;}
+.sub .content > nav > p {
+    position: absolute;
+    right: 0; bottom: 5px; 
+    color: #8c8c8c; 
+    font-size:11px;
+}
+.sub .content > nav > p::before {
+    background-image: url('../img/sub_page_nav_ico.gif');
+    content: "";
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    margin-bottom: 1px;
+    margin-right: 5px;
+}
+.sub .content > nav > p > span {color:#91ba15; font-weight: bold;}
