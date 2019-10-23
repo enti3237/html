@@ -9,13 +9,9 @@
         .sub {
             width: 100%;
             height: auto;
-            border: 1px solid red;
-            box-sizing: border-box;
         }
         .sub > div {
             width: 100%;
-            border: 1px solid blue;
-            box-sizing: border-box;
         }
         .sub > div:nth-child(1){
             position: relative;
@@ -25,7 +21,7 @@
         } 
         .sub > div:nth-child(1) > img {
             position: absolute;
-            left:0; bottom: 10px;
+            left:10px; bottom: 10px;
         }
 
         .sub > div:nth-child(2) {
@@ -33,23 +29,53 @@
             border: 1px solid pink;
             box-sizing: border-box;
             overflow: hidden;
+            /* float를 썼으면 꼭 overflow도 쓸 것 */
         }
-        .sub > div:nth-child(2) > aside {
+        .lnb {
             float: left;
             width: 18%;
             min-height: 650px;
-            border: 1px solid lightcoral;
-            box-sizing: border-box;
+            background: url('/farmstory/img/sub_aside_bg_line.png') no-repeat;
+            background-position: right top; 
         }
+        .lnb > img {}
+
+        .lnb > ul {
+            width: 175px;
+            height: 233px;
+            border: 1px solid lightgreen;
+            box-sizing: border-box;
+            padding-top: 30px;
+            background: url('/farmstory/img/sub_aside_bg_lnb.png') no-repeat;
+        }
+        .lnb > ul > li {
+            width: 100%;
+            height: 29px;
+            margin-bottom: 6px;
+        }
+        .lnb a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+        }
+
+        /* 서브메뉴 - 팜스토리 소개 */
+        .lnb > ul > li:nth-child(1) > a {background: url('/farmstory/img/sub_cate1_lnb1.png');}
+        .lnb > ul > li:nth-child(1) > a:hover {background: url('/farmstory/img/sub_cate1_lnb1_ov.png');}
+        .lnb > ul > li:nth-child(2) > a {background: url('/farmstory/img/sub_cate1_lnb2.png');}
+        .lnb > ul > li:nth-child(2) > a:hover {background: url('/farmstory/img/sub_cate1_lnb2_ov.png');}
+
+        /* 서브메뉴 - 장보기 */
+        /* 서브메뉴 - 농작물이야기 */
+        /* 서브메뉴 - 이벤트 */
+        /* 서브메뉴 - 커뮤니티 */
+
         .sub > div:nth-child(2) > article {
             float: left;
             width: 82%;
             min-height: 650px;
-            border: 1px solid greenyellow;
-            box-sizing: border-box;
         }
-
-    
 
     </style>
 </head>
@@ -79,8 +105,28 @@
 
             <div><img src="/farmstory/img/sub_top_tit1.png" alt="introduction"></div>
             <div>
-                <aside>팜스토리 소개</aside>
-                <article>인사말</article>
+                <aside class="lnb">
+                    <img src="/farmstory/img/sub_aside_cate1_tit.png" alt="팜스토리소개">
+                    <ul>
+                        <li><a href="#">인삿말</a></li>
+                        <li><a href="#">찾아오시는길</a></li>
+                    </ul></aside>
+                <article>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <ul>
+                        <li>항상 저희 팜스토리를 성원해 주시고 관심을 가져주시는 모든 분들께 감사의 인사를 드리며<br>
+                                가정에 건강과 행복이 가득하시길 기원합니다.</li>
+                        <li>팜스토리는 신선하고 안전한 먹거리로 건강한 삶 만들기에 기여합니다.<br>
+                                보다 좋은 농산품을 공급하기 위해 화학비료를 쓰지 않는 건강한 흙에서 유기농업으로 정성을<br>
+                                다해 지은 농사를 통해 믿고 먹을 수 있는 먹거리 제공에 앞장서겠습니다.</li>
+                        <li><b>친환경 농장</b><br>
+                                팜스토리는 경기도 이천에 위치한 10만평 규모의 유기농 제배단지입니다.</li>
+                        <li><b>친환경 캠페인</b><br>
+                                팜스토리는 2차 포장재 사용을 줄임으로써 친환경적인 포장과, 친환경적인 소비문화 정착을 위해 노력합니다.</li>
+                    </ul>
+                </article>
             </div>
 
         </section>
