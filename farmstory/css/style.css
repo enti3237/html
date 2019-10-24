@@ -1,3 +1,6 @@
+/* CSS 만들 땐 스타일 태그 내용물 싹 가져와서 덮으면 됨 ㅇㅅㅇ 태그 자체는 빼고
+css 링크 연결은 스타일 태그 밖에서 해야함
+절대주소는 안 먹힘 */
 
 /* 기존 태그 초기화 (필수작업)
 - 폰트의 경우 all 선택인 *로 지정할 수도 있지만 body 지정이 좀 더 유연한 편 */
@@ -301,17 +304,50 @@ footer > p {
 }
 
 /* 서브메뉴 - 팜스토리 소개 */
-.sub .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate1_lnb1.png');}
-.sub .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate1_lnb2.png');}
-.sub .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate1_lnb1_ov.png');}
-.sub .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate1_lnb2_ov.png');}
-.sub .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate1_lnb1_ov.png');}
-.sub .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate1_lnb2_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate1_lnb1.png');}
+.sub.cate1 .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate1_lnb2.png');}
+.sub.cate1 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate1_lnb1_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate1_lnb2_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate1_lnb1_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate1_lnb2_ov.png');}
 
 /* 서브메뉴 - 장보기 */
+.sub.cate2 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate2_lnb1.png');}
+.sub.cate2 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate2_lnb1_ov.png');}
+.sub.cate2 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate2_lnb1_ov.png');}
+
 /* 서브메뉴 - 농작물이야기 */
+.sub.cate3 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate3_lnb1.png');}
+.sub.cate3 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate3_lnb1_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate3_lnb1_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate3_lnb2.png');}
+.sub.cate3 .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate3_lnb2_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate3_lnb2_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(3) > a {background: url('../img/sub_cate3_lnb3.png');}
+.sub.cate3 .lnb > ul > li:nth-child(3) > a:hover {background: url('../img/sub_cate3_lnb3_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(3).on > a {background: url('../img/sub_cate3_lnb3_ov.png');}
+
 /* 서브메뉴 - 이벤트 */
+.sub.cate4 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate4_lnb1.png');}
+.sub.cate4 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate4_lnb1_ov.png');}
+.sub.cate4 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate4_lnb1_ov.png');}
+
 /* 서브메뉴 - 커뮤니티 */
+.sub.cate5 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate5_lnb1.png');}
+.sub.cate5 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate5_lnb1_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate5_lnb1_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate5_lnb2.png');}
+.sub.cate5 .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate5_lnb2_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate5_lnb2_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(3) > a {background: url('../img/sub_cate5_lnb3.png');}
+.sub.cate5 .lnb > ul > li:nth-child(3) > a:hover {background: url('../img/sub_cate5_lnb3_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(3).on > a {background: url('../img/sub_cate5_lnb3_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(4) > a {background: url('../img/sub_cate5_lnb4.png');}
+.sub.cate5 .lnb > ul > li:nth-child(4) > a:hover {background: url('../img/sub_cate5_lnb4_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(4).on > a {background: url('../img/sub_cate5_lnb4_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(5) > a {background: url('../img/sub_cate5_lnb5.png');}
+.sub.cate5 .lnb > ul > li:nth-child(5) > a:hover {background: url('../img/sub_cate5_lnb5_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(5).on > a {background: url('../img/sub_cate5_lnb5_ov.png');}
 
 .sub > div:nth-child(2) > article {
     float: left;
