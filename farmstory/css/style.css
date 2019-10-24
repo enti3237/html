@@ -10,6 +10,8 @@ body    {font: normal 12px "굴림";}
 ul, ol  {list-style: none;}
 a       {text-decoration: none; color:#111;}
 
+/* 고정배너 만들기 - 위치를 퍼센티지로 두고 마진을 잡는다 */
+
 /* wrapper */
 #wrapper {
    width: 980px;
