@@ -2,208 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FarmStory</title>
-    <link rel="stylesheet" href="css/style.css">
-<style>
-#banner {
-   position: fixed;
-   left: 50%; top: 152px;
-   margin-left: 500px;
-   width: 60px; height: 110px;
-   background: url('./img/float_banner_bg.png');
-}
-#banner > a:nth-of-type(1) {
-    widows: 100%;
-    height: 89px;
-    background: url('./img/float_banner_tit_bg.png');
-}
+    <title>팜스토리</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="./css/style.css"/>
 
-</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="./js/slider.js"></script>
+
 </head>
-
 <body>
     <div id="banner">
-        <a href="./4event/event.html"><img src="./img/float_banner_tit.png" alt=""></a>
-        <a href="./2market/market.html"><img src="./img/float_banner_txt.png" alt=""></a>
+
+
     </div>
 
     <div id="wrapper">
         <header>
-            <a href="http://wppremium02.hubweb.net" class="logo"><img src="img/logo.png" alt=""></a>
-                <p>
-                   <a href="">Home</a>
-                   <a href="">로그인</a>
-                   <a href="">회원가입</a>
-                   <a href="">고객센터</a>
-                </p>
-            <img src="img/head_txt_img.png" alt="3만원 이상 무료배송, 팜카드 10% 적립">
+            <a href="#" class="logo"><img src="./img/logo.png" alt="로고"></a>
+            <p>
+                <a href="#">HOME</a>|
+                <a href="#">로그인</a>|
+                <a href="#">회원가입</a>|
+                <a href="#">고객센터</a>
+            </p>
+            <img src="./img/head_txt_img.png" alt="3만원 이상 무료배송, 팜카드 10% 적립">
 
             <ul class="gnb">
-                <li><a href="./1introduction/hello.html">팜스토리 소개</a></li>
-                <li><a href="./2market/market.html"><img src="img/head_menu_badge.png" alt="30%">장보기</a></li>
-                <li><a href="./3croptalk/story.html">농작물 이야기</a></li>
-                <li><a href="./4event/event.html">이벤트</a></li>
-                <li><a href="./5community/notice.html">커뮤니티</a></li>
+                <li><a href="./introduction/hello.html">팜스토리소개</a></li>
+                <li><a href="./market/market.html"><img src="./img/head_menu_badge.png" alt="30%">장보기</a></li>
+                <li><a href="./croptalk/story.html">농작물이야기</a></li>
+                <li><a href="./event/event.html">이벤트</a></li>
+                <li><a href="./community/notice.html">커뮤니티</a></li>
             </ul>
         </header>
-
         <main>
-            <div class="slider">
-                <img src="img/main_slide_img_tit.png" class="slogan" alt="사람과 자연을 사랑하는 팜스토리">
-                <!-- 태그출력은 위에서 아래기 때문에 그림 위에 올리려면 그냥 아래에 둬도 되긴 한다 ㅇ_) -->
-                <ul>
-                    <li><img src="img/main_slide_img1.jpg" alt="slide1"></li>
-                    <li><img src="img/main_slide_img2.jpg" alt="slide2"></li>
-                    <li><img src="img/main_slide_img3.jpg" alt="slide3"></li>
+            <div class="slider">                
+                <img src="./img/main_slide_img_tit.png" class="slogan" alt="사람과 자연을 사랑하는 팜스토리">
+
+                <ul>                    
+                    <li><img src="./img/main_slide_img1.jpg" alt="슬라이드1"></li>
+                    <li><img src="./img/main_slide_img2.jpg" alt="슬라이드2"></li>
+                    <li><img src="./img/main_slide_img3.jpg" alt="슬라이드3"></li>
                 </ul>
 
                 <div class="banner">
-                    <img src="img/main_banner_txt.png" alt="grand oped">
-                    <img src="img/main_banner_tit.png" alt="30%할인이벤트">
-                    <img src="img/main_banner_img.png" alt="이미지">
+                    <img src="./img/main_banner_txt.png" alt="Grand Open">
+                    <img src="./img/main_banner_tit.png" alt="30% 할인 이벤트">
+                    <img src="./img/main_banner_img.png" alt="이미지">                    
                 </div>
+            </div>
 
-            </div>
             <div class="quick">
-                <a href="http://wppremium02.hubweb.net/?page=14"><img src="img/main_banner_sub1_tit.png" alt="오늘의 식단"></a>
-                <a href="http://wppremium02.hubweb.net/?page=15"><img src="img/main_banner_sub2_tit.png" alt=""></a>
+                <a href="#"><img src="./img/main_banner_sub1_tit.png" alt="오늘의 식단"></a>
+                <a href="#"><img src="./img/main_banner_sub2_tit.png" alt="나도 요리사"></a>                
             </div>
+
             <div class="latest">
                 <article>
-                    <img src="img/main_latest1_tit.png" alt="텃밭 가꾸기">
-                    <img src="img/main_latest1_img.jpg" alt="토마토">
+                    <img src="./img/main_latest1_tit.png" alt="텃밭가꾸기">
+                    <img src="./img/main_latest1_img.jpg" alt="이미지">
                     <table border="0">
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서 맛있게 잘 먹자 냠냠냠</td>
-                            <td>19-03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>건강하게 길러서 맛있게 잘 먹자 냠냠냠</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
-
                     </table>
                 </article>
                 <article>
-                    <img src="img/main_latest2_tit.png" alt="귀농학교">
-                    <img src="img/main_latest2_img.jpg" alt="이미지">
+                    <img src="./img/main_latest2_tit.png" alt="귀농학교">
+                    <img src="./img/main_latest2_img.jpg" alt="이미지">
                     <table border="0">
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>19-03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 ddddd d길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
-
                     </table>
                 </article>
                 <article>
-                    <img src="img/main_latest3_tit.png" alt="농작물이야기">
-                    <img src="img/main_latest3_img.jpg" alt="이미지">
+                    <img src="./img/main_latest3_tit.png" alt="농작물이야기">
+                    <img src="./img/main_latest3_img.jpg" alt="이미지">
                     <table border="0">
                         <tr>
                             <td>></td>
-                            <td>토마토! fffffff건강하게 길러서</td>
-                            <td>19-03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
                         <tr>
                             <td>></td>
-                            <td>토마토! 건강하게 길러서</td>
-                            <td>03-28</td>
+                            <td>토마토! 건강하게 길러서 안심하고 드세요.</td>
+                            <td>19-10-22</td>
                         </tr>
-
                     </table>
                 </article>
+
+              
             </div>
+
             <div class="info">
                 <article>
-                    <img src="img/main_sub2_cs_tit.png" alt="고객센터안내">
+                    <img src="./img/main_sub2_cs_tit.png" alt="고객센터 안내">
                     <div>
-                        <img src="img/main_sub2_cs_img.png" alt="전화기">
-                        <img src="img/main_sub2_cs_txt.png" alt="1666-777">
+                        <img src="./img/main_sub2_cs_img.png" alt="이미지">
+                        <img src="./img/main_sub2_cs_txt.png" alt="1666-777">
                         <ul>
-                            <li>평일: AM 09:00 ~ PM 06:00</li>
-                            <li>점심: PM 12:00 ~ PM 01:00</li>
+                            <li>평일 : AM 09:00 ~ PM 06:00</li>
+                            <li>점심 : PM 12:00 ~ PM 01:00</li>
                             <li>토, 일요일, 공휴일 휴무</li>
                         </ul>
                     </div>
                     <div>
-                        <a href="#"><img src="img/main_sub2_cs_bt1.png" alt="고객문의"></a>
-                        <a href="#"><img src="img/main_sub2_cs_bt2.png" alt="자주묻는질문"></a>
-                        <a href="#"><img src="img/main_sub2_cs_bt3.png" alt="배송조회"></a>
+                        <a href="#"><img src="./img/main_sub2_cs_bt1.png" alt="1:1 고객문의"></a>
+                        <a href="#"><img src="./img/main_sub2_cs_bt2.png" alt="자주묻는 질문"></a>
+                        <a href="#"><img src="./img/main_sub2_cs_bt3.png" alt="배송조회"></a>
                     </div>
                 </article>
                 <article>
-                    <img src="img/main_sub2_account_tit.png" alt="계좌안내">
+                    <img src="./img/main_sub2_account_tit.png" alt="계좌안내">
                     <ul>
                         <li>기업은행 123-456789-01-01-012</li>
                         <li>국민은행 01-1234-56789</li>
                         <li>우리은행 123-456789-01-01-012</li>
                         <li>하나은행 123-456789-01-01</li>
-                        <li>예 금 주 (주)팜스토리</li>
+                        <li>예 금 주 (주)더조은</li>
                     </ul>
                 </article>
                 <article></article>
             </div>
+
         </main>
         <footer>
-            <img src="img/footer_logo.png" alt="로고">
-
-            <p>(주)더조은 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-팜스토리구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br/>
-                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br/>
-                대표 : 홍길동 / 이메일 : email@mail.mail / 전화 : 01) 234-5678 / 부산시 부산진구 부전동<br/>
-                <strong>(C)홍길동 All rights reserved.</strong>
+            <img src="./img/footer_logo.png" alt="로고">
+            <p>
+                (주)더조은 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-더조은-123호 / 벤처기업확인 부산지방중소기업청 제 012345678-9-01234호<br>
+                등록번호 더조은01234 (2013.04.01) / 발행인 : 홍길동<br>
+                대표 : 홍길동 / 이메일 : email@mail.mail / 전화 : 01) 234-5678 / 부산시 부산진구 부전동 345<br>
+                <strong>Copyright(C)홍길동 All rights reserved.</strong>
             </p>
         </footer>
     </div>

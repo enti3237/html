@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        /* 초기화 */
+        * { margin : 0;
+            padding: 0;
+            border : 0; }
+        ul, ol {list-style: none;}
+        a {text-decoration: none; color: #111}
+        
+        body {
+            font-family: "Nanum Gothic", sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+            color: #555; 
+        }
+
+        #wrapper {
+            width: 100%;
+            min-width: 980px;
+            height: auto;
+        }
+
+        /* 상단배너 */
+        #top-banner {
+            width: 100%;
+            height: 80px;
+            background: #00a4e3;
+        }
+        #top-banner > div {
+            position: relative;
+            width: 980px;
+            margin: 0 auto;
+        }
+        #top-banner > div > .close {
+            position: absolute;
+            top: 10px; right:5px;
+        }
+
+        /* 헤더 */
+        header {width: 100%; height: auto;}
+        header > div {width: 100%;}
+        header > div > article {
+            width: 980px;
+            height: 100%;
+            padding-top: 6px;
+            margin: 0 auto;
+        }
+        
+        header > .service {
+            height: 30px;
+            background-color: #efebdb;          
+        }
+        header > .service p:nth-child(1) {float: left;}
+        header > .service p:nth-child(2) {float:right;}
+        header > .service p > a {}
+        header > .service p:nth-child(1) > a {
+            font-weight: 600;
+            color: #555;
+            margin-right: 16px;
+        }
+        /* a태그의 (존재하지 않는) 앞부분이라는 설정 */
+        header > .service p:nth-child(1) > a::before {
+            background-image: url('./img/ico_service.png');
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-bottom: -3px;
+            margin-right: 6px;
+        }
+        header > .service p:nth-child(1) > a:nth-child(1)::before {background-position-x: 0px;}
+        header > .service p:nth-child(1) > a:nth-child(2)::before {background-position-x: -16px;}
+        header > .service p:nth-child(1) > a:nth-child(3)::before {width:20px; background-position-x: -32px;}
+        header > .service p:nth-child(2) > a {
+            color: #6f6247;
+            font-size: 12px;
+            margin-left: 16px;
+        }
+        header > .service p:nth-child(2) > a:hover {
+            border-bottom: 1px solid #9d9580;
+        }
+
+        header > .logo {height: 80px;}
+        header > .logo img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        header > .gnb {
+            width: 100%;
+            height: 72px;
+            border-top: 2px solid #cdc197;
+            border-bottom: 1px solid #e9e4d2;
+            box-sizing: border-box;
+        }
+        header > .gnb ul {
+            display: inline-block;
+            width: 100%;
+            height: auto;
+            margin-top: 26px; 
+        } 
+        header > .gnb li {
+            display: block;
+            font-size: 16px;
+            text-align: center;
+            float: left;
+            width: 16.6%;
+            height: 16px;
+            border-right: 1px solid grey;
+            box-sizing: border-box;
+        }
+        /* 오른쪽 끝만 날려버리는 방법 */
+        header > .gnb ul > li:last-child {border: none;} 
+
+        /* 메인 */
+        main {
+            width: 100%;
+            height: auto;
+            border: 1px solid limegreen;
+            box-sizing: border-box;
+        }
+        main > div {
+            width: 100%;
+            border: 1px solid greenyellow;
+            box-sizing: border-box;
+        }
+        main > div > article {
+            width: 980px;
+            height: 100%;
+            border: 1px solid green;
+            margin:0 auto;
+            box-sizing: border-box;
+        }
+        main > .slider {
+            height: 645px;
+        }
+        main > .slider > div {
+            width: 1450px;
+            height: 100%;
+            border:1px solid green;
+            margin:0 auto;
+        }
+        main > .poster {
+            height: 274px;
+        }
+        main > .sponser {
+            height: 88px;
+        }
+        main > .event {
+            height: 865px;
+        }
+        main > .quick {
+            height: 260px;
+        }
+        main > .notice {
+            height: 60px;
+        }
+
+
+        /* 푸터 */
+        footer {
+            width: 100%;
+            height: auto;
+            border: 1px solid lightsalmon;
+            box-sizing: border-box;
+        }
+        footer > div {
+            width: 100%;
+            border: 1px solid salmon;
+            box-sizing: border-box;
+        }
+        footer > div > article {
+            width: 980px;
+            height: 100%;
+            border: 1px solid red;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        footer > .banner {
+            height: 196px;
+        }
+        footer > .content {
+            height: 205px;
+        }
+        footer > .award {
+            height: 78px;
+        }
+
+    </style>
+    <title>제이시네마</title>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="top-banner">
+            <div>
+                <a href="#">
+                    <img src="./img/top_banner_poster1.jpg" alt="">
+                </a>
+                <a href="#" class="close">
+                    <img src="./img/banner-close.png" alt="닫기">
+                </a>
+            </div>
+        </div>
+
+        <header>
+            <div class="service">
+                <article>
+                    <p>
+                        <a href="#"> 모바일APP</a>
+                        <a href="#"> 좋아요</a>
+                        <a href="#"> 구독하기</a>
+                    </p>
+                    <p>
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                        <a href="#">멤버십</a>
+                        <a href="#">고객센터</a>
+                    </p>
+                </article>
+            </div>
+            <div class="logo">
+                <article>
+                    <a href="#"><img src="./img/logo.gif" alt=""></a>
+                </article>
+            </div>
+            <div class="gnb">
+                <article>
+                    <ul>
+                        <li><a href="#">예매</a></li>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">영화관</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">스토어</a></li>
+                        <li><a href="#">VOD</a></li>
+                    </ul>
+                </article>
+            </div>
+        </header>
+
+        <main>
+            <div class="slider" ><div></div></div>
+            <div class="poster" ><article></article></div>
+            <div class="sponsor"><article></article></div>
+            <div class="event"  ><article></article></div>
+            <div class="quick"  ><article></article></div>
+            <div class="notice" ><article></article></div>
+        </main>
+
+        <footer>
+            <div class="banner" ><article></article></div>
+            <div class="content"><article></article></div>
+            <div class="award"  ><article></article></div>
+        </foter>
+
+    </div>
+    
+</body>
+</html>
