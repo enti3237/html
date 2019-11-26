@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <style>
         /* 초기화 */
         * { margin : 0;
@@ -15,7 +18,7 @@
         a {text-decoration: none; color: #111}
         
         body {
-            font-family: "Nanum Gothic", sans-serif;
+            font-family: 'NanumGothic';
             font-size: 12px;
             font-weight: normal;
             color: #555; 
@@ -123,13 +126,9 @@
         main {
             width: 100%;
             height: auto;
-            border: 1px solid limegreen;
-            box-sizing: border-box;
         }
         main > div {
             width: 100%;
-            border: 1px solid greenyellow;
-            box-sizing: border-box;
         }
         main > div > article {
             width: 980px;
@@ -140,15 +139,138 @@
         }
         main > .slider {
             height: 645px;
+            margin-top:10px;
         }
+
         main > .slider > div {
             width: 1450px;
             height: 100%;
-            border:1px solid green;
             margin:0 auto;
         }
+        main > .slider > div > ul {
+            float: left;
+            width: 1115px;
+            height: 100%;
+        }
+
+        main > .slider .box-office  {
+            position: relative;
+            float: right;
+            width: 315px;
+            height: 100%;
+        }
+        main > .slider .box-office > .top {
+            width: 100%;
+            height: 153px;
+            text-align: center;
+            background: #2A2E33;            
+        }
+        /*  (박스오피스 금색글자 */
+        main > .slider .box-office > .top > img {
+            margin-top: 50px;
+        }
+        /* (예매,평점순 a태그) */
+        main > .slider .box-office > .top > .tab  {
+            display: block;
+            margin-top: 20px;
+        }
+        /* 예매순 */
+        main > .slider .box-office > .top > .tab > a {
+            display: inline-block;
+            padding-bottom: 3px;
+            color: white;
+            font-size: 14px;
+        }
+        main > .slider .box-office > .top > .tab > a.on {
+            border-bottom: 1px solid #7f8285;
+        }
+        main > .slider .box-office > .top > .tab > span {
+            color:#505862;
+            margin: 0 16px;
+        }
+
+        main > .slider .box-office > ul {
+            margin-top: 20px;
+            height: auto;
+            width: 100%;
+        }
+        main > .slider .box-office li  {
+            width: 100%;
+            height: 54px;
+            padding: 11px 10px 0;
+            box-sizing: border-box;
+        }
+        /* 예매율 */
+        main > .slider .box-office li > span {
+            display: block;
+            float: right;
+            margin: 9px 10px 0 0;
+        }
+        main > .slider .box-office li > span > em {
+            padding-left:3px;
+        }
+
+        main > .slider .box-office li > a > .rank {
+            font-size:20px;
+            line-height: 30px;
+            padding-right: 5px;
+            font-family: 'linlivertine';
+            font-weight: bold;
+        }
+        
+        main > .slider .box-office > ul .grade {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 3px -5px 3px;            
+            font-size: 0;
+            background-image: url('./img/sprite_bg_grade.png');
+            overflow: hidden;            
+        }
+        main > .slider .box-office > ul .gradeAll { background-position: 0 0;}
+        main > .slider .box-office > ul .grade12  {background-position: -21px 0;}
+        main > .slider .box-office > ul .grade15  {background-position: -42px 0;}
+        main > .slider .box-office > ul .grade18  {background-position: -63px 0;}
+        main > .slider .box-office > ul .grade19  {background-position: -84px 0;}
+
+        main > .slider .box-office li > a > .tit {
+            display: inline-block;
+            width: 150px;
+            height: 17px;
+            line-height: 13px;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size:14px;
+            letter-spacing: -1px;
+        }
+
+        /* 예매하기 */
+        main > .slider > div > .box-office > a {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 64px;
+            background: #ee1c25;
+            color:white;
+            font: 16px '';
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+            line-height: 64px;
+        }
+
+
+
         main > .poster {
             height: 274px;
+        }
+        main > .poster > article li {
+            float: left;
         }
         main > .sponser {
             height: 88px;
@@ -168,32 +290,67 @@
         footer {
             width: 100%;
             height: auto;
-            border: 1px solid lightsalmon;
+            border-top: 1px solid #dedede;
             box-sizing: border-box;
         }
         footer > div {
             width: 100%;
-            border: 1px solid salmon;
-            box-sizing: border-box;
         }
         footer > div > article {
             width: 980px;
             height: 100%;
-            border: 1px solid red;
-            box-sizing: border-box;
             margin: 0 auto;
+            border:1px solid red;
+            box-sizing: border-box;
         }
         footer > .banner {
             height: 196px;
+            margin-top: 64px;
+            background-color: rbg(0,92,185);
+            text-align: center;
+        }
+        footer > .banner a {
+            display: inline-block;
+            margin-top:-44px;
         }
         footer > .content {
             height: 205px;
         }
+        footer .logo {
+            height: 46px;
+            margin-top: 20px;
+        }
+        footer > .content p {
+            color:#666;
+            font-size: 12px;
+            line-height: 24px;
+            margin-top:24px;
+        }
+        footer > .content p > a {
+            font-size: 13px;
+            font-weight: normal;
+            color: #231f20;
+        }
         footer > .award {
             height: 78px;
+            background: #f5f5f5;
+        }
+        footer > .award img {
+            margin-top: 17px;
+            margin-left: 8px;
+        }
+        footer > .award img:first-child {margin:0;}
+
+        .bx-wrapper {
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 0;
         }
 
     </style>
+    <!-- <script src="./js/slider.js"></script> -->
+
     <title>제이시네마</title>
 </head>
 <body>
@@ -246,21 +403,165 @@
         </header>
 
         <main>
-            <div class="slider" ><div></div></div>
-            <div class="poster" ><article></article></div>
-            <div class="sponsor"><article></article></div>
-            <div class="event"  ><article></article></div>
-            <div class="quick"  ><article></article></div>
-            <div class="notice" ><article></article></div>
+            <div class="slider" >
+                <div>
+                    <ul>
+                        <li><img src="./img/slider_banner_poster1.jpg" alt="겨울왕국2"></li>
+                        <!-- <li><img src="./img/slider_banner_poster2.jpg" alt="조커"></li>
+                        <li><img src="./img/slider_banner_poster3.jpg" alt="81년생김지영"></li>
+                        <li><img src="./img/slider_banner_poster4.jpg" alt="가장보통의연애"></li>
+                        <li><img src="./img/slider_banner_poster5.jpg" alt="터미네이터:다크페이트"></li> -->
+                    </ul>
+                    <div class="box-office"> 
+                        <div class="top">
+                            <img src="./img/tit_boxoffice.png" alt="box-office">
+                            <span class="tab">
+                                <a href="#" class="on">예매순</a>
+                                <span> | </span>
+                                <a href="#">평점순</a>
+                            </span>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">1.</em>
+                                    <span class="grade gradeAll"></span>
+                                    <span class="tit">겨울왕국2</span>
+                                </a>
+                                <span>예매율 <em>64.2%</em></span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">2.</em>
+                                    <span class="grade grade15"></span>
+                                    <span class="tit">82년생 김지영</span>
+                                </a>
+                                <span>예매율 <em>4.5%</em></span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">3.</em>
+                                    <span class="grade grade18"></span>
+                                    <span class="tit">가장 보통의 연애</span>
+                                </a>
+                                <span>예매율 <em>2.5%</em></span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">4.</em>
+                                    <span class="grade grade12">스릴러</span>
+                                    <span class="tit"></span>
+                                </a>
+                                <span>예매율 <em>2.0%</em></span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">5.</em>
+                                    <span class="grade grade19"></span>
+                                    <span class="tit">조커</span>
+                                </a>
+                                <span>예매율 <em>1.2%</em></span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">6.</em>
+                                    <span class="grade grade15"></span>
+                                    <span class="tit">프란치스코 교황</span>
+                                </a>
+                                <span>예매율 <em>1.2%</em></span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <em class="rank">7.</em>
+                                    <span class="grade gradeAll"></span>
+                                    <span class="tit">블랙머니</span>
+                                </a>
+                                <span>예매율 <em>1.1%</em></span>
+                            </li>
+                        </ul>
+                        <a href="#">예매하기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="poster" >
+                <article>
+                    <ul><
+                        <li><img src="./img/poster_banner_img1.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img2.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img3.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img4.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img5.jpg" alt=""></li>
+                        <!-- <li><img src="./img/poster_banner_img6.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img7.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img8.jpg" alt=""></li>
+                        <li><img src="./img/poster_banner_img9.jpg" alt=""></li> -->>
+                    </ul>
+
+                </article>
+            </div>
+            <div class="sponsor">
+                <article>
+
+                </article>
+            </div>
+            <div class="event"  >
+                <article>
+
+                </article>
+            </div>
+            <div class="quick"  >
+                <article>
+
+                </article>
+            </div>
+            <div class="notice" >
+                <article>
+
+                </article>
+            </div>
         </main>
 
         <footer>
-            <div class="banner" ><article></article></div>
-            <div class="content"><article></article></div>
-            <div class="award"  ><article></article></div>
+            <div class="banner" >
+                <article>
+                    <a href="#"><img src="./img/footer_banner_hyundai.jpg"></a>
+                </article>
+            </div>
+            <div class="content">
+                <article>
+                    <img class="logo" src="./img/footer_logo.gif" alt="로고">
+                    <p>
+                        <a href="#">회원약관 |</a>
+                        <a href="#">개인정보방침 |</a>
+                        <a href="#">이메일무단수집거부 |</a>
+                        <a href="#">영상정보처리기기 운영∙관리방침 |</a>
+                        <a href="#">J.POINT회원안내 |</a>
+                        <a href="#">배정기준 |</a>
+                        <a href="#">채용안내 |</a>
+                        <a href="#">광고/임대문의 |</a>
+                        <a href="#">기업정보 |</a>
+                        <a href="#">윤리경영</a><br>
+                        부산광역시 부산진구 신천대로 300 월드타워 28층 | 고객센터 1544-1234<br>
+                        대표이사 홍길동 | 사업자등록번호 123-12-12345 | 통신판매업신고번호 제1234호 | 개인정보 보호책임자 김유신 <br>
+                        COPYRIGHT@ JCINEMA ALL RIGHT RESERVED.
+                    </p>
+                </article>
+            </div>
+            <div class="award">
+                <article>
+                    <img src="./img/footer_award1.jpg" alt="">
+                    <img src="./img/footer_award2.gif" alt="">
+                    <img src="./img/footer_award3.gif" alt="">
+                    <img src="./img/footer_award4.gif" alt="">
+                    <img src="./img/footer_award5.gif" alt="">
+                    <img src="./img/footer_award6.gif" alt="">
+                    <img src="./img/footer_award7.gif" alt="">
+                    <img src="./img/footer_award8.gif" alt="">
+                </article>
+            </div>
         </foter>
 
     </div>
     
 </body>
-</html>
+</html>`
