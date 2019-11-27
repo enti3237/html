@@ -133,9 +133,7 @@
         main > div > article {
             width: 980px;
             height: 100%;
-            border: 1px solid green;
             margin:0 auto;
-            box-sizing: border-box;
         }
         main > .slider {
             height: 645px;
@@ -264,26 +262,143 @@
             line-height: 64px;
         }
 
-
-
         main > .poster {
             height: 274px;
+            margin: 70px 0;
+        }
+        main > .poster ul {
+            overflow: hidden;
         }
         main > .poster > article li {
             float: left;
+            margin-right:10px;
         }
+        /* 한쪽 가장자리만 선이나 여백 없애기 좀 기억해두자 */
+        main > .poster > article li:last-child {margin:0}
+        
+
         main > .sponser {
             height: 88px;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #dedede;
+            box-sizing: border-box;
         }
+        main > .sponser > article {
+            overflow: hidden;
+            margin-top:25px;
+        }
+        main > .sponser > article li {
+            float: left;
+            margin-right:48px;
+        }
+        main > .sponser > article li:last-child {margin: 0;}
+
         main > .event {
             height: 865px;
+            background-image: url('./img/bg_pattern.png');
         }
+
+        main > .event > article {
+            position: relative;
+        }
+        main > .event h1 {
+            padding: 40px 0;
+            font-size:40px;
+            font-family: 'NanumMyeong';
+            font-style: italic;
+            color:#231f20;
+            text-align: center;
+        }
+
+        main > .event a {
+            display: inline-block;
+            position: absolute;
+        }
+        main > .event a:nth-child(1) {top: 135px; left:0px;}
+        main > .event a:nth-child(2) {top: 135px; left:335px;}
+        main > .event a:nth-child(3) {top: 135px; right:0px;}
+        main > .event a:nth-child(4) {bottom: 255px; left:0px;}
+        main > .event a:nth-child(5) {bottom: 255px; left:335px;}
+        main > .event a:nth-child(6) {bottom: 30px; right:0px;}
+        main > .event a:nth-child(7) {bottom: 30px; left:0px;}
+/* 
         main > .quick {
             height: 260px;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            padding: 50px;
+            box-sizing: border-box;
         }
+        main > .quick > article {
+            display: block;
+            width:804px;
+            height: 160px;
+            overflow: hidden;
+            }
+
+        main > .quick > article a {
+            float: left;
+            margin-left: 1px;
+            box-sizing: border-box;
+        }
+        main > .quick > article a:first-child {margin:0} */
+
+        main > .quick {
+            height: 260px;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #dedede;
+        }
+        main > .quick > article {
+            padding-top: 50px;
+            box-sizing: border-box;
+            text-align: center;    
+        }
+        main > .quick ul > li {
+            float: left;
+            margin: 0 4px;
+        }
+
+
+
         main > .notice {
             height: 60px;
         }
+        main > .notice > article {
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+        main > .notice > article > h2 {
+            float:left;
+        }
+        main > .notice .more {
+            float: right;
+            display: inline-block;
+            height: 13px;
+            margin:3px 40px 0 0;
+            padding-right: 18px;
+            background: url('../img/btn_more.png') no-repeat 100% 0;
+            font-size: 11px;
+            color: #666;
+            line-height: 13px;
+        }
+        main > .notice ul {
+            float: left;         
+            width: 740px;
+            height: 20px;
+            margin-left: 42px;
+            line-height: 20px;            
+            overflow: hidden;
+        }
+        main > .notice ul > li > a {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
 
 
         /* 푸터 */
@@ -300,8 +415,6 @@
             width: 980px;
             height: 100%;
             margin: 0 auto;
-            border:1px solid red;
-            box-sizing: border-box;
         }
         footer > .banner {
             height: 196px;
@@ -485,37 +598,66 @@
             </div>
             <div class="poster" >
                 <article>
-                    <ul><
-                        <li><img src="./img/poster_banner_img1.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img2.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img3.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img4.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img5.jpg" alt=""></li>
-                        <!-- <li><img src="./img/poster_banner_img6.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img7.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img8.jpg" alt=""></li>
-                        <li><img src="./img/poster_banner_img9.jpg" alt=""></li> -->>
+                    <ul>
+                        <li><a href="#"><img src="./img/poster_banner_img1.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img2.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img3.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img4.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img5.jpg" alt=""></a></li>
                     </ul>
 
                 </article>
             </div>
-            <div class="sponsor">
+            <div class="sponser">
                 <article>
+                    <ul>
+                        <li><a href="#"><img src="./img/sponsor_img1.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img2.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img3.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img4.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img5.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img6.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img7.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/sponsor_img8.jpg" alt=""></a></li>
+                    </ul>
 
                 </article>
             </div>
             <div class="event"  >
                 <article>
+                    <h1>Event</h1>
+                    <div>
+                        <a href="#"><img src="./img/event_img1.jpg" alt-""></a>
+                        <a href="#"><img src="./img/event_img2.jpg" alt-""></a>
+                        <a href="#"><img src="./img/event_img3.jpg" alt-""></a>
+                        <a href="#"><img src="./img/event_img4.jpg" alt-""></a>
+                        <a href="#"><img src="./img/event_img5.jpg" alt-""></a>
+                        <a href="#"><img src="./img/event_img6.jpg" alt-""></a>
+                        <a href="#"><img src="./img/event_img7.jpg" alt-""></a>
+                    </div>
 
                 </article>
             </div>
             <div class="quick"  >
                 <article>
-
+                    <a href="#"><img src="./img/quick_menu1.gif"></a>
+                    <a href="#"><img src="./img/quick_menu2.gif"></a>
+                    <a href="#"><img src="./img/quick_menu3.gif"></a>
+                    <a href="#"><img src="./img/quick_menu4.gif"></a>
+                    <a href="#"><img src="./img/quick_menu5.gif"></a>
                 </article>
             </div>
             <div class="notice" >
                 <article>
+                    <h2>공지사항</h2>
+                    <ul>
+                        <li><a href="#">시스템 점검 안내</a></li>
+                        <li><a href="#">개인정보 이용내역 안내</a></li>
+                        <li><a href="#">개인정보 처리방침 개정안내</a></li>
+                        <li><a href="#">시티카드 시스템 점검안내</a></li>
+                        <li><a href="#">환불규정 안내</a></li>
+                    </ul>
+                    <a class="more" href="#">MORE + </a>
 
                 </article>
             </div>
