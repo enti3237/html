@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제이시네마::예매하기</title>
+    <link rel="shortcut icon" href="/jcinema/img/favicon.ico"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sub.css">    
+
+    <style>
+        /* 예매 - 인원/ 좌석 선택 페이지 */
+        #sub.choice-seat {}
+        #sub.choice-seat > section {
+        }
+        /* 가로사이즈 100%의 각 구역 */
+        #sub.choice-seat > section:nth-of-type(1) {
+            height: 260px;
+            padding: 50px 0 30px;
+            background: #f9f6ec;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section:nth-of-type(2) {
+            height: 420px;
+            padding: 20px 0 32px;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section:nth-of-type(3) {
+            height: 35.5px;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section:nth-of-type(4) {
+            height: 50px;
+            margin: 0 13px;
+            background:#cdc197;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section:nth-of-type(5) {
+            height: 255.5px;
+            background: #363640;
+            box-sizing: border-box;
+        }
+
+        /* 중앙정렬구간 */
+        #sub.choice-seat > section > div {
+            width: 980px;
+            height: auto;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        /* 인원/좌석선택 */
+        #sub.choice-seat > section > .seat-setting {
+        }
+        /* 타이틀 */
+        #sub.choice-seat > section > .seat-setting > h1 {
+            color:#231f20;
+            font-size: 28px;
+            padding: 0 0 20px;
+        }
+        #sub.choice-seat > section > .seat-setting > div {
+            padding:0 28px 0 30px;
+            background:#fff;
+
+        }
+        #sub.choice-seat > section > .seat-setting > div > div {
+
+        } 
+        /* 셀렉트박스 부분 */
+        #sub.choice-seat > section > .seat-setting > div > div:nth-of-type(1){
+            padding: 20px 0 10px;
+            font-size:14px;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat .seat-setting > div > div:nth-of-type(1) > span {
+            display: inline-block;
+            width: 72px;
+            height: 30px;
+            margin: 0 20px 0 0;
+            color: #231f20;
+        }
+        #sub.choice-seat .seat-setting > div > div:nth-of-type(1) > select {
+            width: 70px;
+            height: 32px;
+            color: #666;
+            border:1px solid #ccc;
+            padding: 0 0 0 0px;
+            margin: 0 15px 0 0;
+            box-sizing: border-box;
+        }
+
+        /* 좌석붙임설정 */
+        #sub.choice-seat > section > .seat-setting > div > div:nth-of-type(2){
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat .seat-setting > div > div:nth-of-type(2) > span {
+            color: #222;
+            margin: 0 3px 0 0;
+            font-size:14px;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat .seat-setting > div > div:nth-of-type(2) > img {
+            margin: 2px 15px 0 5px;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat .seat-setting > div > div:nth-of-type(2) > em {
+            float:right;
+            font: normal 13px "나눔고딕";
+            color: #777;
+        }
+
+
+
+        #sub.choice-seat > section > .seat-area {
+            margin: 0 75.6px;
+            padding: 20px 0 32px;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+        /* 스크린 사각박스 */
+        #sub.choice-seat > section > div.seat-area> div.screen {
+            background-image: url('/jcinema/img/bg_screen.gif');
+            margin: 0 0 15px;
+            box-sizing: border-box;
+        }
+        /* 스크린 글자 */
+        #sub.choice-seat > section > div.seat-area> div.screen > em {
+            display: block;
+            line-height: 25px;
+            font-size: 20px;
+            color: #231f20;
+            text-align: center;
+            font-style: italic;
+        }
+        /* 관객석 */
+        #sub.choice-seat > section > div.seat-area> article {
+            overflow: auto;
+            position: relative;
+            padding: 20px 0;
+            background: #f9f8f3;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section > div.seat-area> article > ul {
+            border:1px solid red;
+        }
+        #sub.choice-seat > section > div.seat-area> article > ul > li {
+            margin: 0 0 0 177px;
+            box-sizing: border-box;
+        }
+        /* 왼쪽의 abcd 표시 부분 */
+        #sub.choice-seat > section > div.seat-area> article > ul > li > span {
+            border:1px solid red;
+
+        }
+        #sub.choice-seat > section > div.seat-area> article > ul > li > span.tit {}
+        #sub.choice-seat > section > div.seat-area> article > ul > li > a {
+            display: inline-block;
+            color:#fff;
+            width: 22px;
+            height: 22px;
+            font-size: 11px;
+            line-height: 23px;
+            background: #848484;
+        }
+
+
+
+
+
+        #sub.choice-seat > section > div.seat-area> ol {
+            float:right;
+            padding: 20px 0 0;
+
+        }
+        #sub.choice-seat > section > div.seat-area> ol > li {
+            float: left;
+            font-size:13px;
+            margin: 0 0 0 27px;
+            padding: 0 0 0 22px;
+            color: #666;
+            box-sizing: border-box;
+        }
+
+
+        #sub.choice-seat > section > .seat-info {
+            width: auto;
+            height: 35px;
+            margin: 0 75.5px;
+            padding: 10px 0;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section > .seat-info > ol {
+        }
+        #sub.choice-seat > section > .seat-info > ol > li {
+            float: left;
+        }
+
+        #sub.choice-seat > section > .back-and-pay {
+            margin: 0 75.5px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section > .back-and-pay > a:nth-of-type(1){
+            display: block;
+            color: #231f20;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #sub.choice-seat > section > .back-and-pay > a:nth-of-type(1)::before{
+            float: left;
+            padding-left: 29px;
+            background: url(/jcinema/img/btn_total_prev02.png) no-repeat 0 50%;
+        }
+
+        #sub.choice-seat > section > .back-and-pay > a:nth-of-type(2){
+            display: inline-block;
+            min-width: 115px;
+            min-height: 28px;
+            color: #231f20;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #b2a168;
+            background: #f5f3ea;
+            line-height: 26px;
+            text-align: center;
+            vertical-align: middle;        
+        }
+
+        #sub.choice-seat > section > .total-info {
+
+        }
+        #sub.choice-seat > section > .total-info > div {
+            display: block;
+            width: 33.3%;
+            height: auto;
+            float: left;
+            color:#a7a9ac;
+            padding: 15px 15px 20px;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+        #sub.choice-seat > section > .total-info > div > span {}
+        #sub.choice-seat > section > .total-info > div img {
+            width: 65px;
+            height: 94px;
+        }
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
+    <script src="../js/topBanner.js"></script>
+    <script src="../js/ticket.js"></script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="top-banner">
+            <canvas id="canvas"></canvas>
+            <div>
+                <a href="#" class="image"><img id="topBannerImg" src="/jcinema/img/top_banner_poster1.jpg" alt=""></a>
+                <a href="#" class="close"><img src="/jcinema/img/banner-close.png" alt=""></a>
+            </div>
+        </div>
+
+        <header>
+            <div class="service">
+                <article>
+                    <p>
+                        <a href="#">모바일 APP</a>
+                        <a href="#">좋아요</a>
+                        <a href="#">구독하기</a>
+                    </p>
+                    <p>
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                        <a href="#">멤버십</a>
+                        <a href="#">고객센터</a>
+                    </p>
+                </article>
+            </div>
+            <div class="logo">
+                <article>
+                    <a href="/jcinema"><img src="/jcinema/img/logo.gif" alt=""></a>
+                </article>                
+            </div>
+            <div class="gnb">
+                <article>
+                    <ul>
+                        <li class="on"><a href="#">예매</a></li>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">영화관</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">제이몰</a></li>
+                        <li><a href="#">VOD</a></li>
+                    </ul>
+
+                </article>
+            </div>
+        </header>
+
+        <div id="sub" class="choice-seat">
+            <nav class="sub-menu"></nav>
+
+            <section>
+                <div class="seat-setting">
+                    <h1>인원 / 좌석선택</h1>
+                    <div>
+                        <div>
+                            <span>성인</span>
+                            <select class="adult">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <span>청소년</span>
+                            <select class="teenager">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <span>시니어</span>
+                            <select class="senior">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <span>장애인</span>
+                            <select class="disPerson">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span>좌석 붙임 설정</span>
+                            <img src="../img/ico_exclamation.gif" alt="" title="최대 5명까지 선택 가능"/>
+                            <em>. 인원은 최대 5명까지 선택 가능합니다.</em>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <div class="seat-area">
+                    <div class="screen"><em>Screen</em></div>
+                    <article>
+                        <ul>
+                            <li>
+                                <span class="tit">A</span>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">1</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">2</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">3</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">4</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">5</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">6</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">7</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">8</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">9</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">10</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">11</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">12</a>
+                                <a href="#" class="seat" data-seat="A1" title="좌석 A1">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">B</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">C</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">D</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">E</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">F</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">G</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                            <li>
+                                <span class="tit">H</span>
+                                <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
+                                <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
+                                <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
+                                <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
+                                <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
+                                <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
+                                <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
+                                <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
+                                <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
+                                <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
+                                <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
+                                <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
+                                <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
+                            </li>
+                        </ul>
+                    </article>
+                    <p>
+                        · 선택한 좌석을 다시 클릭하면 취소됩니다.<br>
+                        · SWEET SPOT은 최적의 화면과 사운드를 즐길 수 있는 좌석입니다.<br>
+                        (스크린 가운데에서 상영관 뒤 벽까지 직선 거리의 2/3 지점)
+                    </p>
+
+                    <ol>
+                        <li><i class="bg_seat_exit"></i>출입문</li>
+                        <li><i class="bg_seat_selected"></i>선택좌석</li>
+                        <li><i class="bg_seat_available"></i>선택가능</li>
+                        <li><i class="bg_seat_reserved"></i>예매완료</li>
+                        <li><i class="bg_seat_not"></i>선택불가</li>
+                    </ol>
+
+                </div>
+            </section>
+            <section>
+                   <div class="seat-info">
+                    <ol>
+                        <li><i class="bg_seat_sweet"></i>SWEET SPOT</li>
+                        <li><i class="bg_seat_couple"></i>CINE COUPLE</li>
+                        <li><i class="bg_seat_family"></i>CINE FAMILY</li>
+                        <li><i class="bg_seat_comfort"></i>CINE COMFORT(리클라이너)</li>
+                        <li><i class="bg_set_disable"></i>장애인석</li>
+                        <li><i class="bg_set_foot"></i>발받침</li>
+                    </ol>
+                </div>
+            </section>
+            <section>
+              <div class="back-and-pay">
+                    <a href="#">영화선택</a>
+                    <a href="#">일반결제</a>
+                </div>
+            </section>
+            <section>
+                 <div class="total-info">
+                    <div>
+                        <span>영화</span>
+                        <article>
+                            <img class="poster" src="../img/total_info_poster.jpg" alt="">
+                            <p class="movie-info">
+                                <strong>겨울왕국2</strong>
+                                <b>2D</b>
+                                <em>전체관람가</em>
+                            </p>
+                        </article>
+
+                    </div>
+                    <div>
+                        <span>예매정보</span>
+                        <table>
+                            <tr>
+                                <td>상영일</td>
+                                <td>2019-12-02(월)</td>
+                            </tr>
+                            <tr>
+                                <td>상영시간</td>
+                                <td>17:00 ~ 18:53</td>
+                            </tr>
+                            <tr>
+                                <td>상영관</td>
+                                <td>오투(부산대)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>4관</td>
+                            </tr>
+                            <tr>
+                                <td>좌석</td>
+                                <td>C5, C6</td>
+                            </tr>
+                        </table>
+                        <h2>28,000<span>원</span></h2>
+                    </div>
+                    <div>
+                        <span>총 결제 금액</span>
+                        <table>
+                            <tr>
+                                <td>영화예매</td>
+                                <td class="right">￦28,000</td>
+                            </tr>
+                        </table>                        
+                        <h2>28,000<span>원</span></h2>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+        </div>
+
+        <footer>
+                <div class="banner1">
+                        <a href="#"><img src="./img/showtime_banner_img1.jpg" alt=""></a>
+                    </div>
+                    <div class="banner2" style="background-color: rgb(0, 92, 185);">
+                        <a href="#"><img src="/jcinema/img/footer_banner_hyundai.jpg" alt=""></a>
+                    </div>
+            <div class="content">
+                <article>
+                    <img class="logo" src="/jcinema/img/footer_logo.gif" alt="로고">
+                    <p>
+                        <a href="#">회원약관 |</a>
+                        <a href="#">개인정보처리방침 |</a>
+                        <a href="#">이메일무단수집거부 |</a>
+                        <a href="#">영상정보처리기기 운영∙관리방침 |</a>
+                        <a href="#">J.POINT회원안내 |</a>
+                        <a href="#">배정기준 |</a>
+                        <a href="#">채용안내 |</a>
+                        <a href="#">광고/임대문의 |</a>
+                        <a href="#">기업정보 |</a>
+                        <a href="#">윤리경영</a><br>
+                        부산광역시 부산진구 신천대로 300 월드타워 27층 | 고객센터 1544-1234<br>
+                        대표이사 홍길동 | 사업자등록번호 123-12-12345 | 통신판매업신고번호 제1234호 | 개인정보 보호책임자 김춘추<br>
+                        COPYRIGHT© JCINEMA ALL RIGHT RESERVED.
+                    </p>
+                </article>
+            </div>
+            <div class="award">
+                <article>
+                    <img src="/jcinema/img/footer_award1.jpg" alt=""/>
+                    <img src="/jcinema/img/footer_award2.gif" alt=""/>
+                    <img src="/jcinema/img/footer_award3.gif" alt=""/>
+                    <img src="/jcinema/img/footer_award4.gif" alt=""/>
+                    <img src="/jcinema/img/footer_award5.gif" alt=""/>
+                    <img src="/jcinema/img/footer_award6.gif" alt=""/>
+                    <img src="/jcinema/img/footer_award7.gif" alt=""/>
+                    <img src="/jcinema/img/footer_award8.gif" alt=""/>
+                </article>
+            </div>
+        </footer>
+    </div>    
+</body>
+</html> 

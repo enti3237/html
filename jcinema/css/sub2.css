@@ -1,0 +1,438 @@
+/* 서브페이지-인덱스의 메인 부분 중앙정렬시킴 */
+#sub {
+    min-height: 100px;
+    margin: 0 auto;
+}
+
+/* 헤더 메뉴 아래 개별 메뉴 (색만 잡아둠) */
+#sub > .sub-menu {
+    height: 40px;
+    background: #dad2b4;
+}
+/* 상단 개별 메뉴 외의 아래 두 블럭 */
+#sub > div {
+    width:980px;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+}
+
+/* 예매 - 서브페이지와 같은 듯...? */
+#sub.choice-movie {
+    color: #231f20;
+    font-size: 15px;
+    background: #f9f6ec;            
+}
+/* 서브의 날짜+영화관 / 상영시간 */
+#sub.choice-movie > div > article {}
+
+/* 사이드배너, 캘린더, 영화관, 예매평점순까지 포함하는 범위므로 여기에 포지션을 잡는다 */
+#sub.choice-movie > .theater {position: relative;}
+
+/* 서브의 양쪽 배너 위치 고정 - 위치를 퍼센티지로 두고 마진을 잡기 */
+#sub.choice-movie .side-banner {             
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-top: 144px;
+}
+#sub.choice-movie .side-banner.left {margin-left: 490px; }
+#sub.choice-movie .side-banner.right {margin-left: -650px;}
+
+
+/* 캘린더(month, year, 날짜의 ul-li 포함) */
+#sub.choice-movie > .theater .calendar {
+    clear: both;
+    width: 980px;
+    height: 117px;
+    color: #231f20;
+    padding: 0 60px 20px 60px;
+    border-bottom: 3px solid black;
+    box-sizing: border-box;
+}
+/* 캘린더의 연-월 */
+#sub.choice-movie > .theater .calendar > nav {}
+/* 캘린더의 연-월의 숫자 월(11) */
+#sub.choice-movie > .theater .calendar > nav > .month {
+    margin: 0 15px 0 0;
+    padding: 0 4px;
+    border-bottom: 2px solid #231f20;
+    color: #231f20;
+    font: bold 34px 'Linux Libertine';
+    /* 스타일-크기-패밀리 순서 맞춰야 하고 하나라도 빠지면 안됨 */
+}
+/* 캘린더의 연-월의 숫자+영문 연도 */
+#sub.choice-movie > .theater .calendar > nav > .year {
+    font-weight: bold;
+    color: #666;
+    font-size: 12px;
+}
+/* 캘린더의 일자 박스 */
+#sub.choice-movie > .theater .calendar > div {
+}
+/* 캘린더의 일자 정렬 */
+#sub.choice-movie > .theater .calendar ul {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 50px;            
+}
+/* 캘린더의 일자 개별행 */
+#sub.choice-movie > .theater .calendar ul li {
+    float: left;
+    display: block;
+    width: 30px;
+    padding: 5px 0 0 0;
+    margin: 0 30px 0 0;
+    text-align: center;
+}
+/* 캘린더의 개별행 당일 날짜값(숫자) */
+#sub.choice-movie > .theater .calendar ul li.on span {
+    display: block;
+    width: 25px;
+    height: 25px;
+    font-size:14px;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+/* 캘린더의 요일, 날짜 전체 */
+#sub.choice-movie > .theater .calendar ul a {}
+
+/* 캘린더의 요일 전체 */
+#sub.choice-movie > .theater .calendar ul em {
+    font-style: normal;
+    display: block;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+/* 캘린더의 날짜 전체 */
+#sub.choice-movie > .theater .calendar ul span {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 캘린더의 개별행 평일 클래스값 요일날짜 */
+#sub.choice-movie > .theater .calendar ul li.day a {
+    color:#231f20
+}
+/* 캘린더의 개별행 토요일 클래스값 요일날짜 */
+#sub.choice-movie > .theater .calendar ul li.sat a {
+    color:#407BBB;
+}
+/* 캘린더의 개별행 일요일 클래스값 요일날짜 */        
+#sub.choice-movie > .theater .calendar ul li.sun a {
+    color:#CD190B;
+}
+
+
+
+
+/* 영화관 박스 */
+#sub > .theater > article > section {}
+#sub > .theater > article > section > .region {
+    float:left;
+    display: block;
+    width: 600px;
+    height: auto;
+    color:#555555;
+    background:#fff;
+
+}
+/* 영화관, my영화관 div */
+#sub > .theater > article > section > .region > div {
+    height: 60px;
+    padding: 0px 25px 0px 20px;
+    border-bottom: 1px solid #dedede;
+    line-height: 60px;
+    box-sizing: border-box;
+}
+/* .region 과 .rank 의 상단 div - h3 라인(타이틀)을 묶어서 사용 */
+#sub > .theater > article > section  div > h3 {
+    float: left;
+    color: #231f20;
+    padding: 0 0 0 10px;
+    font-size:20px;
+}
+/* .region 과 .rank 의 상단 div - span 라인(최대 선택 가능~)을 묶어서 사용 */
+#sub > .theater > article > section  div > span {
+    float: right;
+    color:#777;
+    font-size:13px;
+}
+/* 영화관, 랭크의 소제목 */
+#sub > .theater > article > section > .region > div > h4 {
+    float: left;
+    font-size: 15px;
+    color: #231f20;
+    padding: 0 0 0 10px;
+    line-height: 60px;
+}
+/* 로그인 후 확인하실 수  */
+#sub > .theater > article > section > .region > div > p {
+    float: right;
+    font-size:13px;
+    color: #777;
+    box-sizing: border-box;
+}
+/* 로그인 마크 */
+#sub > .theater > article > section > .region > div > p > a {
+    padding: 3px 5px 2px 2px;
+    border:1px solid black;
+    margin-left: 10px;
+}
+/* 로그인 아이콘 */
+#sub > .theater > article > section > .region > div > p > a::before {
+    background-image: url('/jcinema/img/btn_loginTicket.png');
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 13px;
+    margin: 0 5px;
+}
+
+/* 영화관 전체 구역*/
+#sub > .theater > article > section > .region > article {
+    float:left;
+    width: 600px;
+    height:auto;
+    position: relative;
+    padding: 20px 0 0 20px;
+    box-sizing: border-box;
+}
+/* 전체영화관 타이틀 */
+#sub > .theater > article > section > .region > article > h4 {
+    display: block;
+    width: 580px;
+    height: 33.75px;
+    padding: 0 0 20px;
+    font-size: 12.5px;
+    box-sizing: border-box;
+}
+/* 영화관지역전체 */
+#sub > .theater > article > section > .region > article > ul {
+    height: 415px;
+    overflow: auto;
+} 
+/* 지역 */
+#sub > .theater > article > section > .region > article > ul > li {
+    width: 130px;
+    height: 48px;
+} 
+/* 지역명 */
+#sub > .theater > article > section > .region > article > ul > li > a {
+    display: block;
+    width: 100%;
+    height: 40px;            
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;            
+    line-height: 40px;
+    padding-left: 14px;
+    box-sizing: border-box;
+}
+/* 지역세부 */
+#sub > .theater > article > section > .region > article > ul > li > ol {
+    position: absolute;
+    left: 140px;
+    top: 0px;
+    display: none;
+    width: 418px;
+    height: 100%;
+} 
+/* 지역세부명 */
+#sub > .theater > article > section > .region > article > ul > li > ol li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #efefef;
+    background: #efefef;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+/* 서울전체 */
+#sub > .theater > article > section > .region > article > ul > li.active {
+    color:#fff;
+    background: #000;
+} 
+/* 서울 */
+#sub > .theater > article > section > .region > article > ul li.active > a {
+    background: #231f20;
+    color: #fff;
+}
+/* 서울지역전체 */
+#sub > .theater > article > section > .region > article > ul li.active > ol.on {
+    display: block;
+}
+/* 서울세부지역전체 (회색박스 표기) */
+#sub > .theater > article > section > .region > article > ul li.active > ol.on li {
+    float: left;
+    width: 128px;
+    height: 40px;
+    margin-right: 9px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+} 
+#sub > .theater > article > section > .region > article > ul li.active > ol.on li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #efefef;
+    background: #efefef;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+#sub > .theater > article > section > .region > article > ul li.active > ol.on li.chk > a {
+    padding: 0 25px;
+    border: 1px solid #999;
+    color: #231f20;
+    font-weight: bold;
+    background: #fff url('../img/bg_check.png') no-repeat 10px 50%;
+}
+
+
+
+
+/* 예매 - 오른쪽 영화순위 */
+#sub > .theater > article > section > .rank {
+    float:right;
+    width: 380px;
+    height:auto;
+    background:#fff;
+    box-sizing: border-box;
+}
+/* 2개 */
+#sub > .theater > article > section > .rank > div {
+    display: block;
+    height: 60px;
+    color:#555555;
+    padding: 0px 25px 0px 20px;
+    border-bottom: 1px solid #dedede;
+    line-height: 60px;
+    box-sizing: border-box;
+} 
+/* 상단 div 소속 - .region 쪽에서 묶어서 같이 사용함
+#sub > .theater > article > section > .rank > div > h3 {} 
+#sub > .theater > article > section > .rank > div > span {}  */
+/* 하단 div 소속 예매/평점순 */
+#sub > .theater > article > section > .rank > div > p {float: right;}
+/* 예매순 굵게 */
+#sub > .theater > article > section > .rank > div > p > a.on {font-weight: bold;}
+#sub > .theater > article > section > .rank > article {
+    font:12.5px;
+    color:#555;
+}
+#sub > .theater > article > section > .rank > article > ul {
+    height: 470px;
+    overflow: auto;
+}
+/* 영화타이틀 */
+#sub > .theater > article > section > .rank > article > ul li {
+    padding: 9px 10px 9px 29px;
+    box-sizing: border-box;
+} 
+#sub > .theater > article > section > .rank > article > ul li > a {}
+/* 영화등급 아이콘 */
+#sub > .theater > article > section > .rank > article > ul li > a > .grade {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 3px -5px 3px;            
+    font-size: 0;
+    background-image: url('../img/sprite_bg_grade.png');
+    overflow: hidden; 
+}
+#sub > .theater > article > section > .rank > article > ul li > a > .gradeAll {}
+#sub > .theater > article > section > .rank > article > ul li > a > .grade12 {background-position: -21px 0;}
+#sub > .theater > article > section > .rank > article > ul li > a > .grade15 {background-position: -42px 0;}
+#sub > .theater > article > section > .rank > article > ul li > a > .grade18 {background-position: -63px 0;}
+#sub > .theater > article > section > .rank > article > ul li > a > .grade19 {background-position: -84px 0;}
+/* 영화제목 */
+#sub > .theater > article > section > .rank > article > ul li > a > .tit {
+    display: block;
+    widows: 100%;
+}
+
+/* 예매 - 상영시간 */
+#sub > .showtime {
+    min-height: 554px;
+}
+#sub > .showtime > article {
+    display: inline-block;
+    background: #dad2b4;
+    width: 980px;
+    height: 65px;
+    color:#555555;
+}
+/* 베이지색 박스 안에 들어갈 내용 */
+#sub > .showtime > article > .info {
+    width: 980px;          
+    height: 65px;  
+    color: #231f20;                        
+    font-size: 16px;
+    background: #dad2b4;
+    padding-top: 24px;
+    box-sizing: border-box;
+}
+/* 상영일 영화관 영화 */
+#sub > .showtime > article > .info > em {
+    font-style: normal;
+    margin: 0 20px 0 0;
+    line-height: 30px;
+}
+/* 날짜 */
+#sub > .showtime > article > .info > span {
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+/* 베이지 박스 아래로 빠짐 상영시간 조회 */
+#sub > .showtime > article > section {
+    position: relative;
+    width: 100%;
+    min-height: 489px;
+    padding: 40px 0;            
+    box-sizing: border-box;
+}
+#sub > .showtime > article > section > h1 {
+    color: #231f20;
+    font-size: 24px;
+}
+#sub > .showtime > article > section > h1 > span {
+    margin-left: 8px;
+    font-size: 13px;
+    color: #777;
+    font-weight: normal;
+}
+/* 조회안됨 경고 */
+#sub > .showtime > article > section > .nodata {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: -12px;
+    width: auto;
+    height: 24px;
+    padding-top: 2px;
+    padding-left: 30px;
+    background: url('../img/ico_nodata.png') no-repeat;
+    font-size: 18px;
+    color: #777;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .showtime .banner {
+height: 230px;
+}

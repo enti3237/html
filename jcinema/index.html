@@ -5,464 +5,40 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="/jcinema/css/style.css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <style>
-        /* 초기화 */
-        * { margin : 0;
-            padding: 0;
-            border : 0; }
-        ul, ol {list-style: none;}
-        a {text-decoration: none; color: #111}
+   
+    <script src="/jcinema/js/topbanner.js"></script>
+    <script >
+        $(document).ready(function(){
+            // 메인 슬라이더
+            $('.slider .slides').bxSlider({
+                slideWidth: '1115',
+                auto: true, 
+                pause: 3000,
+                controls: false
+            });
+
+            // 포스터 슬라이더
+            $('.poster ul').bxSlider({
+                'slideWidth' : '188', 
+                'minSlides' : 5,
+                'maxSlides' : 5, 
+                'moveSlides' : 1,
+                'pager' : false, 
+                'auto' : true
+            });
+
+            // 메인 공지사항 롤링업
+
+
+        });
         
-        body {
-            font-family: 'NanumGothic';
-            font-size: 12px;
-            font-weight: normal;
-            color: #555; 
-        }
+</script>
 
-        #wrapper {
-            width: 100%;
-            min-width: 980px;
-            height: auto;
-        }
-
-        /* 상단배너 */
-        #top-banner {
-            width: 100%;
-            height: 80px;
-            background: #00a4e3;
-        }
-        #top-banner > div {
-            position: relative;
-            width: 980px;
-            margin: 0 auto;
-        }
-        #top-banner > div > .close {
-            position: absolute;
-            top: 10px; right:5px;
-        }
-
-        /* 헤더 */
-        header {width: 100%; height: auto;}
-        header > div {width: 100%;}
-        header > div > article {
-            width: 980px;
-            height: 100%;
-            padding-top: 6px;
-            margin: 0 auto;
-        }
-        
-        header > .service {
-            height: 30px;
-            background-color: #efebdb;          
-        }
-        header > .service p:nth-child(1) {float: left;}
-        header > .service p:nth-child(2) {float:right;}
-        header > .service p > a {}
-        header > .service p:nth-child(1) > a {
-            font-weight: 600;
-            color: #555;
-            margin-right: 16px;
-        }
-        /* a태그의 (존재하지 않는) 앞부분이라는 설정 */
-        header > .service p:nth-child(1) > a::before {
-            background-image: url('./img/ico_service.png');
-            content: "";
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-bottom: -3px;
-            margin-right: 6px;
-        }
-        header > .service p:nth-child(1) > a:nth-child(1)::before {background-position-x: 0px;}
-        header > .service p:nth-child(1) > a:nth-child(2)::before {background-position-x: -16px;}
-        header > .service p:nth-child(1) > a:nth-child(3)::before {width:20px; background-position-x: -32px;}
-        header > .service p:nth-child(2) > a {
-            color: #6f6247;
-            font-size: 12px;
-            margin-left: 16px;
-        }
-        header > .service p:nth-child(2) > a:hover {
-            border-bottom: 1px solid #9d9580;
-        }
-
-        header > .logo {height: 80px;}
-        header > .logo img {
-            display: block;
-            margin: 0 auto;
-        }
-
-        header > .gnb {
-            width: 100%;
-            height: 72px;
-            border-top: 2px solid #cdc197;
-            border-bottom: 1px solid #e9e4d2;
-            box-sizing: border-box;
-        }
-        header > .gnb ul {
-            display: inline-block;
-            width: 100%;
-            height: auto;
-            margin-top: 26px; 
-        } 
-        header > .gnb li {
-            display: block;
-            font-size: 16px;
-            text-align: center;
-            float: left;
-            width: 16.6%;
-            height: 16px;
-            border-right: 1px solid grey;
-            box-sizing: border-box;
-        }
-        /* 오른쪽 끝만 날려버리는 방법 */
-        header > .gnb ul > li:last-child {border: none;} 
-
-        /* 메인 */
-        main {
-            width: 100%;
-            height: auto;
-        }
-        main > div {
-            width: 100%;
-        }
-        main > div > article {
-            width: 980px;
-            height: 100%;
-            margin:0 auto;
-        }
-        main > .slider {
-            height: 645px;
-            margin-top:10px;
-        }
-
-        main > .slider > div {
-            width: 1450px;
-            height: 100%;
-            margin:0 auto;
-        }
-        main > .slider > div > ul {
-            float: left;
-            width: 1115px;
-            height: 100%;
-        }
-
-        main > .slider .box-office  {
-            position: relative;
-            float: right;
-            width: 315px;
-            height: 100%;
-        }
-        main > .slider .box-office > .top {
-            width: 100%;
-            height: 153px;
-            text-align: center;
-            background: #2A2E33;            
-        }
-        /*  (박스오피스 금색글자 */
-        main > .slider .box-office > .top > img {
-            margin-top: 50px;
-        }
-        /* (예매,평점순 a태그) */
-        main > .slider .box-office > .top > .tab  {
-            display: block;
-            margin-top: 20px;
-        }
-        /* 예매순 */
-        main > .slider .box-office > .top > .tab > a {
-            display: inline-block;
-            padding-bottom: 3px;
-            color: white;
-            font-size: 14px;
-        }
-        main > .slider .box-office > .top > .tab > a.on {
-            border-bottom: 1px solid #7f8285;
-        }
-        main > .slider .box-office > .top > .tab > span {
-            color:#505862;
-            margin: 0 16px;
-        }
-
-        main > .slider .box-office > ul {
-            margin-top: 20px;
-            height: auto;
-            width: 100%;
-        }
-        main > .slider .box-office li  {
-            width: 100%;
-            height: 54px;
-            padding: 11px 10px 0;
-            box-sizing: border-box;
-        }
-        /* 예매율 */
-        main > .slider .box-office li > span {
-            display: block;
-            float: right;
-            margin: 9px 10px 0 0;
-        }
-        main > .slider .box-office li > span > em {
-            padding-left:3px;
-        }
-
-        main > .slider .box-office li > a > .rank {
-            font-size:20px;
-            line-height: 30px;
-            padding-right: 5px;
-            font-family: 'linlivertine';
-            font-weight: bold;
-        }
-        
-        main > .slider .box-office > ul .grade {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin: 0 3px -5px 3px;            
-            font-size: 0;
-            background-image: url('./img/sprite_bg_grade.png');
-            overflow: hidden;            
-        }
-        main > .slider .box-office > ul .gradeAll { background-position: 0 0;}
-        main > .slider .box-office > ul .grade12  {background-position: -21px 0;}
-        main > .slider .box-office > ul .grade15  {background-position: -42px 0;}
-        main > .slider .box-office > ul .grade18  {background-position: -63px 0;}
-        main > .slider .box-office > ul .grade19  {background-position: -84px 0;}
-
-        main > .slider .box-office li > a > .tit {
-            display: inline-block;
-            width: 150px;
-            height: 17px;
-            line-height: 13px;
-            vertical-align: middle;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            font-weight: bold;
-            font-size:14px;
-            letter-spacing: -1px;
-        }
-
-        /* 예매하기 */
-        main > .slider > div > .box-office > a {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            height: 64px;
-            background: #ee1c25;
-            color:white;
-            font: 16px '';
-            font-weight: bold;
-            text-align: center;
-            display: inline-block;
-            line-height: 64px;
-        }
-
-        main > .poster {
-            height: 274px;
-            margin: 70px 0;
-        }
-        main > .poster ul {
-            overflow: hidden;
-        }
-        main > .poster > article li {
-            float: left;
-            margin-right:10px;
-        }
-        /* 한쪽 가장자리만 선이나 여백 없애기 좀 기억해두자 */
-        main > .poster > article li:last-child {margin:0}
-        
-
-        main > .sponser {
-            height: 88px;
-            border-top: 1px solid #e5e5e5;
-            border-bottom: 1px solid #dedede;
-            box-sizing: border-box;
-        }
-        main > .sponser > article {
-            overflow: hidden;
-            margin-top:25px;
-        }
-        main > .sponser > article li {
-            float: left;
-            margin-right:48px;
-        }
-        main > .sponser > article li:last-child {margin: 0;}
-
-        main > .event {
-            height: 865px;
-            background-image: url('./img/bg_pattern.png');
-        }
-
-        main > .event > article {
-            position: relative;
-        }
-        main > .event h1 {
-            padding: 40px 0;
-            font-size:40px;
-            font-family: 'NanumMyeong';
-            font-style: italic;
-            color:#231f20;
-            text-align: center;
-        }
-
-        main > .event a {
-            display: inline-block;
-            position: absolute;
-        }
-        main > .event a:nth-child(1) {top: 135px; left:0px;}
-        main > .event a:nth-child(2) {top: 135px; left:335px;}
-        main > .event a:nth-child(3) {top: 135px; right:0px;}
-        main > .event a:nth-child(4) {bottom: 255px; left:0px;}
-        main > .event a:nth-child(5) {bottom: 255px; left:335px;}
-        main > .event a:nth-child(6) {bottom: 30px; right:0px;}
-        main > .event a:nth-child(7) {bottom: 30px; left:0px;}
-/* 
-        main > .quick {
-            height: 260px;
-            border-top: 1px solid #dedede;
-            border-bottom: 1px solid #dedede;
-            padding: 50px;
-            box-sizing: border-box;
-        }
-        main > .quick > article {
-            display: block;
-            width:804px;
-            height: 160px;
-            overflow: hidden;
-            }
-
-        main > .quick > article a {
-            float: left;
-            margin-left: 1px;
-            box-sizing: border-box;
-        }
-        main > .quick > article a:first-child {margin:0} */
-
-        main > .quick {
-            height: 260px;
-            border-top: 1px solid #e5e5e5;
-            border-bottom: 1px solid #dedede;
-        }
-        main > .quick > article {
-            padding-top: 50px;
-            box-sizing: border-box;
-            text-align: center;    
-        }
-        main > .quick ul > li {
-            float: left;
-            margin: 0 4px;
-        }
-
-
-
-        main > .notice {
-            height: 60px;
-        }
-        main > .notice > article {
-            padding-top: 20px;
-            box-sizing: border-box;
-        }
-        main > .notice > article > h2 {
-            float:left;
-        }
-        main > .notice .more {
-            float: right;
-            display: inline-block;
-            height: 13px;
-            margin:3px 40px 0 0;
-            padding-right: 18px;
-            background: url('../img/btn_more.png') no-repeat 100% 0;
-            font-size: 11px;
-            color: #666;
-            line-height: 13px;
-        }
-        main > .notice ul {
-            float: left;         
-            width: 740px;
-            height: 20px;
-            margin-left: 42px;
-            line-height: 20px;            
-            overflow: hidden;
-        }
-        main > .notice ul > li > a {
-            display: block;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            line-height: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-
-
-
-        /* 푸터 */
-        footer {
-            width: 100%;
-            height: auto;
-            border-top: 1px solid #dedede;
-            box-sizing: border-box;
-        }
-        footer > div {
-            width: 100%;
-        }
-        footer > div > article {
-            width: 980px;
-            height: 100%;
-            margin: 0 auto;
-        }
-        footer > .banner {
-            height: 196px;
-            margin-top: 64px;
-            background-color: rbg(0,92,185);
-            text-align: center;
-        }
-        footer > .banner a {
-            display: inline-block;
-            margin-top:-44px;
-        }
-        footer > .content {
-            height: 205px;
-        }
-        footer .logo {
-            height: 46px;
-            margin-top: 20px;
-        }
-        footer > .content p {
-            color:#666;
-            font-size: 12px;
-            line-height: 24px;
-            margin-top:24px;
-        }
-        footer > .content p > a {
-            font-size: 13px;
-            font-weight: normal;
-            color: #231f20;
-        }
-        footer > .award {
-            height: 78px;
-            background: #f5f5f5;
-        }
-        footer > .award img {
-            margin-top: 17px;
-            margin-left: 8px;
-        }
-        footer > .award img:first-child {margin:0;}
-
-        .bx-wrapper {
-            -moz-box-shadow: none;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            border: 0;
-        }
-
-    </style>
-    <!-- <script src="./js/slider.js"></script> -->
 
     <title>제이시네마</title>
 </head>
@@ -470,9 +46,10 @@
     <div id="wrapper">
 
         <div id="top-banner">
+            <canvas id="canvas"></canvas>
             <div>
                 <a href="#">
-                    <img src="./img/top_banner_poster1.jpg" alt="">
+                    <img id ="topBannerImg" src="./img/top_banner_poster1.jpg" alt="">
                 </a>
                 <a href="#" class="close">
                     <img src="./img/banner-close.png" alt="닫기">
@@ -504,7 +81,7 @@
             <div class="gnb">
                 <article>
                     <ul>
-                        <li><a href="#">예매</a></li>
+                        <li><a href="/jcinema/ticketing/choice-movie.html">예매</a></li>
                         <li><a href="#">영화</a></li>
                         <li><a href="#">영화관</a></li>
                         <li><a href="#">이벤트</a></li>
@@ -516,14 +93,14 @@
         </header>
 
         <main>
-            <div class="slider" >
+            <div class="slider">
                 <div>
-                    <ul>
+                    <ul class="slides">
                         <li><img src="./img/slider_banner_poster1.jpg" alt="겨울왕국2"></li>
-                        <!-- <li><img src="./img/slider_banner_poster2.jpg" alt="조커"></li>
+                        <li><img src="./img/slider_banner_poster2.jpg" alt="조커"></li>
                         <li><img src="./img/slider_banner_poster3.jpg" alt="81년생김지영"></li>
                         <li><img src="./img/slider_banner_poster4.jpg" alt="가장보통의연애"></li>
-                        <li><img src="./img/slider_banner_poster5.jpg" alt="터미네이터:다크페이트"></li> -->
+                        <li><img src="./img/slider_banner_poster5.jpg" alt="터미네이터:다크페이트"></li>
                     </ul>
                     <div class="box-office"> 
                         <div class="top">
@@ -562,8 +139,8 @@
                             <li>
                                 <a href="#">
                                     <em class="rank">4.</em>
-                                    <span class="grade grade12">스릴러</span>
-                                    <span class="tit"></span>
+                                    <span class="grade grade12"></span>
+                                    <span class="tit">제목은 어디까지 들어가야 안 깨질 것인가</span>
                                 </a>
                                 <span>예매율 <em>2.0%</em></span>
                             </li>
@@ -596,7 +173,7 @@
                     </div>
                 </div>
             </div>
-            <div class="poster" >
+            <div class="poster">
                 <article>
                     <ul>
                         <li><a href="#"><img src="./img/poster_banner_img1.jpg" alt=""></a></li>
@@ -604,6 +181,10 @@
                         <li><a href="#"><img src="./img/poster_banner_img3.jpg" alt=""></a></li>
                         <li><a href="#"><img src="./img/poster_banner_img4.jpg" alt=""></a></li>
                         <li><a href="#"><img src="./img/poster_banner_img5.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img6.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img7.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img8.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="./img/poster_banner_img9.jpg" alt=""></a></li>
                     </ul>
 
                 </article>
@@ -651,7 +232,7 @@
                 <article>
                     <h2>공지사항</h2>
                     <ul>
-                        <li><a href="#">시스템 점검 안내</a></li>
+                        <li><a href="#">시스템 점검 안내 공지가 넘쳐나는 것을 확인해봅시다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다다닫</a></li>
                         <li><a href="#">개인정보 이용내역 안내</a></li>
                         <li><a href="#">개인정보 처리방침 개정안내</a></li>
                         <li><a href="#">시티카드 시스템 점검안내</a></li>
@@ -664,10 +245,11 @@
         </main>
 
         <footer>
-            <div class="banner" >
-                <article>
-                    <a href="#"><img src="./img/footer_banner_hyundai.jpg"></a>
-                </article>
+            <div class="banner1">
+                <a href="#"><img src="/jcinema/img/showtime_banner_img1.jpg" alt=""></a>
+            </div>
+            <div class="banner2" style="background-color: rgb(0, 92, 185);">
+                <a href="#"><img src="/jcinema/img/footer_banner_hyundai.jpg" alt=""></a>
             </div>
             <div class="content">
                 <article>

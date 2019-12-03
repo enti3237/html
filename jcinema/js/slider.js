@@ -1,9 +1,8 @@
 $(document).ready(function(){
-    $('.slider>div>ul').bxSlider({
-        slideWidth: 'auto',
-        auto:'true',
+    $('.slider .slides').bxSlider({
+        slideWidth: '1115',
+        auto: true, 
         pause: 3000,
-        controls: false,
-        pager: false
+        controls: false
     });
 });

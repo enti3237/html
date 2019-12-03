@@ -1,0 +1,388 @@
+/* �쒕툕�섏씠吏� 怨듯넻 */
+#sub {
+}
+
+#sub > .sub-menu {
+    width: 100%;
+    height: 40px;
+    background: #dad2b4;
+}
+
+#sub > div {
+    width: 100%;
+}
+
+
+/* �덈ℓ */
+#sub.choice-movie > div > article {
+    position: relative;
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#sub.choice-movie .side-banner {
+    position: absolute;
+}
+#sub.choice-movie .side-banner.left {
+    left: -170px;
+    top: 153px;
+}
+#sub.choice-movie .side-banner.right {
+    right: -170px;
+    top: 153px;
+}
+
+#sub.choice-movie > .theater {
+    height: 728px;
+    background: #f9f6ec;
+}
+
+/* �덈ℓ - �곷떒�щ젰 */
+#sub.choice-movie > .theater .calendar {
+    position: relative;
+    width: 100%;
+    height: 132px;
+    padding-top: 26px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+#sub.choice-movie > .theater .calendar > nav {
+    float: left;
+    margin-left: 83px;
+    margin-top: 0px;
+}
+
+#sub.choice-movie > .theater .calendar > nav > .month {            
+    font-size: 34px;
+    margin: 0 15px 0 0;
+    border-bottom: 2px solid #231f20;
+    font-family: 'Linux Libertine';
+    color: #231f20;
+    font-weight: bold;
+}
+
+#sub.choice-movie > .theater .calendar > nav > .year{            
+    font-weight: bold;            
+    color: #666;
+    font-size: 12px;
+}
+
+
+#sub.choice-movie > .theater .calendar > div {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -421px;
+    width: 842px;
+    height: 50px;
+}
+
+#sub.choice-movie > .theater .calendar ul {
+    overflow: hidden;
+}
+
+
+#sub.choice-movie > .theater .calendar ul > li {
+    float: left;
+    width: 60px;
+    height: 48px;            
+}
+
+#sub.choice-movie > .theater .calendar ul > li.on span {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #231f20;
+    color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+#sub.choice-movie > .theater .calendar ul > li.day a {color: #231f20}
+#sub.choice-movie > .theater .calendar ul > li.sat a {color: #407bbb}
+#sub.choice-movie > .theater .calendar ul > li.sun a {color: #cd190b}
+
+
+#sub.choice-movie > .theater .calendar ul a {
+    display: block;
+    color: #231f20;
+    text-align: center;
+}
+#sub.choice-movie > .theater .calendar ul em {
+    display: block;            
+    font-size: 13px;
+    padding-bottom: 5px;
+    font-style: normal;
+}
+#sub.choice-movie > .theater .calendar ul span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;       
+}
+
+/* �덈ℓ - �댁슜遺� 怨듯넻 */
+#sub.choice-movie > .theater section {
+    width: 100%;
+    height: auto;
+    border-top: 2px solid #23333b;
+    box-sizing: border-box;
+    background: #fff;
+    overflow: hidden;
+}
+
+#sub.choice-movie > .theater section > div {
+    float: left;            
+}
+
+#sub.choice-movie > .theater section > div > div {
+    width: 100%;
+    height: 56px;
+    border-bottom: 1px solid #dedede;   
+    padding: 0 20px;
+    box-sizing: border-box;
+    line-height: 56px;
+}
+
+#sub.choice-movie > .theater section > div h3   {float: left;font-size: 20px;font-weight: bold;color: #231f20;}
+#sub.choice-movie > .theater section > div h4   {float: left;font-size: 14px;font-weight: bold;color: #231f20;}
+#sub.choice-movie > .theater section > div span {float: right;font-size: 13px;color: #777;}
+#sub.choice-movie > .theater section > div p    {float: right;font-size: 13px;color: #777;}
+#sub.choice-movie > .theater section > div a.login {    
+    display: inline-block;
+    width: 70px;
+    height: 28px;            
+    line-height: 28px;
+    font-size: 13px;
+    margin-left: 16px;
+    text-align: center;
+    border: 1px solid #999;
+    background: #fff;
+    color: #231f20;
+}
+#sub.choice-movie > .theater section > div a.login::before {
+    background-image: url('../img/ico_btn_login.png');
+    content: "";
+    display: inline-block;
+    height: 13px;
+    width: 11px;
+    position: relative;
+    left: -4px;
+    top: 2px;            
+}
+
+#sub.choice-movie > .theater section > div > article {
+    width: 100%;
+    height: 462px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#sub.choice-movie > .theater section > div > article > h4 {            
+    background-image: url('../img/header_gnb_bullet.gif');
+    background-repeat: no-repeat;
+    background-position: left 5px;            
+    margin-bottom: 16px;
+    padding-left: 10px;
+}
+
+/* �덈ℓ - �쇱そ �곹솕愿� */
+#sub.choice-movie > .theater section > .region {
+    width: 600px;
+}
+
+#sub.choice-movie > .theater section > .region ul{
+    position: relative;
+    clear: both;
+    width: 568px;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#sub.choice-movie > .theater section > .region ul > li {
+    width: 130px;
+    height: 48px;
+}
+#sub.choice-movie > .theater section > .region ul > li > a {
+    display: block;
+    width: 100%;
+    height: 40px;            
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;            
+    line-height: 40px;
+    padding-left: 14px;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .theater section > .region ul > li.active > a {
+    background: #231f20;
+    color: #fff;
+}
+#sub.choice-movie > .theater section > .region ul ol {
+    position: absolute;
+    left: 140px;
+    top: 0px;
+    display: none;
+    width: 418px;
+    height: 100%;
+}
+#sub.choice-movie > .theater section > .region ul ol.on {display: block;}
+
+#sub.choice-movie > .theater section > .region ul ol > li {
+    float: left;
+    width: 128px;
+    height: 40px;
+    margin-right: 9px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+#sub.choice-movie > .theater section > .region ul ol > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #efefef;
+    background: #efefef;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .theater section > .region ul ol > li.chk > a {
+    padding: 0 25px;
+    border: 1px solid #999;
+    color: #231f20;
+    font-weight: bold;
+    background: #fff url('../img/bg_check.png') no-repeat 10px 50%;
+}
+
+/* �덈ℓ - �ㅻⅨ履� �곹솕�쒖쐞 */
+#sub.choice-movie > .theater section > .rank {
+    width: 380px;
+    border-left: 1px solid #c0c0c0;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .theater section > .rank a.on {
+    color: #231f20;
+    font-weight: bold;
+}
+
+#sub.choice-movie > .theater section > .rank ul {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#sub.choice-movie > .theater section > .rank ul > li > a {
+    display: block;
+    width: 240px;            
+    margin-bottom: 24px;
+    overflow: hidden;            
+
+}
+
+#sub.choice-movie > .theater section > .rank ul .grade {
+    float: left;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -4px;
+    font-size: 0;
+    background-image: url('../img/sprite_bg_grade.png');
+    overflow: hidden;
+}
+
+#sub.choice-movie > .theater section > .rank ul .gradeAll { background-position: 0 0;}
+#sub.choice-movie > .theater section > .rank ul .grade12  {background-position: -21px 0;}
+#sub.choice-movie > .theater section > .rank ul .grade15  {background-position: -42px 0;}
+#sub.choice-movie > .theater section > .rank ul .grade18  {background-position: -63px 0;}
+#sub.choice-movie > .theater section > .rank ul .grade19  {background-position: -84px 0;}
+
+
+#sub.choice-movie > .theater section > .rank ul .tit {
+    float: left;            
+    display: block;
+    width: 214px;                        
+    font-size: 14px;
+    margin-left: 6px;            
+    overflow: hidden;            
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #231f20;
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 6px;            
+}
+
+/* �덈ℓ - �곸쁺�쒓컙 */
+#sub.choice-movie > .showtime {
+    min-height: 554px;
+}
+
+#sub.choice-movie > .showtime .info {
+    width: 980px;          
+    height: 65px;  
+    color: #231f20;                        
+    font-size: 16px;
+    background: #dad2b4;
+    padding-top: 24px;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .showtime .info > em {            
+    font-style: normal;
+    margin-left: 32px;
+}
+#sub.choice-movie > .showtime .info > span {            
+    font-weight: bold;
+    margin-left: 24px;
+}
+#sub.choice-movie > .showtime .info > .infoDate {}
+#sub.choice-movie > .showtime .info > .infoTheater {}
+#sub.choice-movie > .showtime .info > .infoMovie {}
+
+#sub.choice-movie > .showtime section {
+    position: relative;
+    width: 100%;
+    min-height: 489px;
+    padding: 40px 0;            
+    box-sizing: border-box;
+}
+#sub.choice-movie > .showtime section > h1 {
+    color: #231f20;
+    font-size: 24px;
+}
+#sub.choice-movie > .showtime section > h1 > span {
+    margin-left: 8px;
+    font-size: 13px;
+    color: #777;
+    font-weight: normal;
+}
+
+#sub.choice-movie > .showtime section > .nodata {                        
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: -12px;
+    width: auto;
+    height: 24px;
+    padding-top: 2px;
+    padding-left: 30px;
+    background: url('../img/ico_nodata.png') no-repeat;
+    font-size: 18px;
+    color: #777;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .showtime .banner {
+    height: 230px;
+}

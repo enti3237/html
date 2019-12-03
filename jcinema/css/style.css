@@ -1,0 +1,483 @@
+/* 초기화 */
+* { margin : 0; padding: 0; border : 0; }
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #111}
+
+body {
+    font-family: 'NanumGothic';
+    font-size: 12px;
+    font-weight: normal;
+    color: #555; 
+}
+
+#wrapper {
+    width: 100%;
+    min-width: 980px;
+    height: auto;
+}
+
+/* 최상단 랜덤 배너 */
+#top-banner {
+    width: 100%;
+    height: 80px;
+}
+/* 배너이미지 사이드 색 추출용 캔버스 */
+#top-banner > canvas {
+    display: none;
+}
+/* 배너 이미지 */
+#top-banner > div {
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+}
+/* 배너 우상단 x 버튼 */
+#top-banner > div > .close {
+    position: absolute;
+    top: 10px; right:5px;
+}
+
+/* 헤더 (로그인구역, 로고구역, 메뉴구역) */
+header {width: 100%; height: auto; }
+header > div {width: 100%; }
+/* 헤더 중앙 내용공간 */
+header > div > article {
+    width: 980px;
+    height: 100%;
+    padding-top: 6px;
+    margin: 0 auto;
+}
+/* 헤더 로그인구역 */
+header > .service {
+    height: 30px;
+    background-color: #efebdb;          
+}
+header > .service p:nth-child(1) {float: left;}
+header > .service p:nth-child(2) {float:right;}
+header > .service p:nth-child(1) > a {
+    font-weight: 600;
+    color: #555;
+    margin-right: 16px;
+}
+/* 소형아이콘 적용 기본 방식 (중요) */
+header > .service p:nth-child(1) > a::before {
+    background-image: url('../img/ico_service.png');
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-bottom: -3px;
+    margin-right: 6px;
+}
+/* 위에 기본설정을 적용하고 아이콘의 위치를 position-x, y로 잡는다 */
+header > .service p:nth-child(1) > a:nth-child(1)::before {background-position-x: 0px;}
+header > .service p:nth-child(1) > a:nth-child(2)::before {background-position-x: -16px;}
+header > .service p:nth-child(1) > a:nth-child(3)::before {width:20px; background-position-x: -32px;}
+header > .service p:nth-child(2) > a {
+    color: #6f6247;
+    font-size: 12px;
+    margin-left: 16px;
+}
+header > .service p:nth-child(2) > a:hover {
+    border-bottom: 1px solid #9d9580;
+}
+
+/* 헤더 로고 구역 */
+header > .logo {height: 80px;}
+/* margin 0 auto 로 중앙잡는 건 display 속성이 block일 때만 가능 */
+header > .logo img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 헤더 메뉴 구역 */
+header > .gnb {
+    width: 100%;
+    height: 72px;
+    border-top: 2px solid #cdc197;
+    border-bottom: 1px solid #e9e4d2;
+    box-sizing: border-box;
+}
+/* 메뉴 상부 마진 잡기 */
+header > .gnb ul {
+    width: 100%;
+    height: auto;
+    margin-top: 26px; 
+}
+header > .gnb li {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    float: left;
+    width: 16.6%;
+    height: 16px;
+    border-right: 1px solid grey;
+    box-sizing: border-box;
+}
+/* 마진을 공통으로 잡고 한쪽 끝만 날리려 할 때 */
+header > .gnb ul > li:last-child {border: none;} 
+
+/* 메인 */
+main {width: 100%; height: auto;}
+main > div {width: 100%;}
+/* 메인 중앙 내용 박스 (슬라이더와 박스오피스는 불포함) */
+main > div > article {
+    width: 980px;
+    height: 100%;
+    margin:0 auto;
+}
+
+/* 메인의 대형 슬라이더 높이와 상부 마진 잡기 */
+main > .slider {
+    height: 645px;
+    margin-top:10px;
+}
+/* bx 슬라이더 사용 시 슬라이더 자체를 플로트 시켜줘야 박스오피스가 밑으로 안 떨어짐 */
+main > .slider .bx-wrapper {
+    float: left;
+    box-shadow: none;
+}
+/* bx 슬라이더 컨트롤 위치 잡기 */
+main > .slider .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    bottom: 16px;
+}
+/* bx 슬라이더 컨트롤 a hover 색 바꾸기 */
+main > .slider .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: #fff;
+}
+/* bx 슬라이더 가장자리 효과 없애기 */
+.bx-wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+}
+/* 메인의 슬라이더+박스오피스의 가로크기 잡기 */
+main > .slider > div {
+    width: 1450px;
+    height: 100%;
+    margin:0 auto;
+}
+/* 슬라이더의 이미지 정렬 - 상단에 bx 슬라이더를 플로트 시켜줘서 여기선 안 잡아도 된다 */
+main > .slider > div > ul {
+    /* float: left; */
+    width: 1115px;
+    height: 100%;
+    overflow: hidden;
+}
+/* 박스오피스 */
+main > .slider .box-office  {
+    position: relative;
+    float: right;
+    width: 315px;
+    height: 100%;
+}
+/* 박스오피스 상단 */
+main > .slider .box-office > .top {
+    width: 100%;
+    height: 153px;
+    text-align: center;
+    background: #2A2E33;            
+}
+/* 박스오피스 상단의 금색글자 */
+main > .slider .box-office > .top > img {
+    margin-top: 50px;
+}
+/* 박스오피스 상단의 예매, 평점순 위치잡기  */
+main > .slider .box-office > .top > .tab  {
+    display: block;
+    margin-top: 20px;
+}
+/* 박스오피스 상단의 예매, 평점순 색지정 (.tab과 안 합쳐짐) */
+main > .slider .box-office > .top > .tab > a {
+    padding-bottom: 3px;
+    color: white;
+    font-size: 14px;
+}
+/* 박스오피스 상단의 예매순 언더바 - 텍스트로 잡으면 너무 붙는다 */
+main > .slider .box-office > .top > .tab > a.on {
+    border-bottom: 1px solid #7f8285;
+}
+/* 박스오피스 상단의 예매, 평점순 사이 | */
+main > .slider .box-office > .top > .tab > span {
+    color:#505862;
+    margin: 0 16px;
+}
+/* 박스오피스 리스트 전체 */
+main > .slider .box-office > ul {
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+}
+/* 박스오피스 리스트의 개별 행 */
+main > .slider .box-office li  {
+    width: 100%;
+    height: 54px;
+    padding: 11px 10px 0;
+    box-sizing: border-box;
+}
+/* 개별 행의 예매율 */
+main > .slider .box-office li > span {
+    display: block;
+    float: right;
+    margin: 9px 10px 0 0;
+}
+/* 개별 행의 예매율의 퍼센티지 부분 */
+main > .slider .box-office li > span > em {
+    padding-left:3px;
+}
+/* 개별 행의 순서 넘버링 */
+main > .slider .box-office li > a > .rank {
+    font-size:20px;
+    line-height: 30px;
+    padding-right: 5px;
+    font-family: 'linlivertine';
+    font-weight: bold;
+}
+/* 개별 행의 제목 앞 아이콘 마킹 (소형아이콘 잡는 법을 기억해두기) */
+main > .slider .box-office > ul .grade {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 3px -5px 3px;            
+    font-size: 0;
+    background-image: url('../img/sprite_bg_grade.png');
+    overflow: hidden;            
+}
+main > .slider .box-office > ul .gradeAll { background-position: 0 0;}
+main > .slider .box-office > ul .grade12  {background-position: -21px 0;}
+main > .slider .box-office > ul .grade15  {background-position: -42px 0;}
+main > .slider .box-office > ul .grade18  {background-position: -63px 0;}
+main > .slider .box-office > ul .grade19  {background-position: -84px 0;}
+/* 개별 행의 제목 - block으로 하면 행이 깨진다 */
+main > .slider .box-office li > a > .tit {
+    display: inline-block;
+    width: 150px;
+    height: 17px;
+    line-height: 13px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size:14px;
+    letter-spacing: -1px;
+    /* 세로 중앙정렬 */
+    vertical-align: middle;
+    /* 제목이 길어질 때 잘라내는 용도 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 박스 오피스 하단 예매하기 부분 */
+main > .slider > div > .box-office > a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: #ee1c25;
+    color:white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 64px;
+}
+
+/* 메인의 슬라이드 포스터 부분 */
+main > .poster {
+    height: 274px;
+    margin: 70px 0;
+}
+/* !important로 인스타일 적용하기 - 왜인지 기본보다 작아져서(...?) 가로폭을 고정시킨다 */
+main > .poster .bx-wrapper {
+    max-width: 980px !important;
+}
+/* 슬라이드 포스터 양쪽의 꺽쇠 이미지 */
+main > .poster a.bx-next {
+    right: -60px;
+    height: 40px;
+    background: url('../img/btn_next_on.png') no-repeat;
+}
+main > .poster a.bx-prev {
+    left: -60px;
+    height: 40px;
+    background: url('../img/btn_prev_on.png') no-repeat;
+}
+/* main > .poster ul {overflow: hidden;} */
+/* 슬라이드 포스터의 각 행 - 플로트 안 잡아도 됨 bx 슬라이더 때문인듯 */
+main > .poster > article li {
+    /* float: left; */
+    margin-right:10px;
+}
+/* 슬라이드 포스터 오른쪽에 공통마진 잡은 후 한쪽만 없애기 */
+main > .poster > article li:last-child {margin:0}
+
+/* 메인 3번째 스폰서 구역 */
+main > .sponser {
+    height: 88px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #dedede;
+    box-sizing: border-box;
+}
+main > .sponser > article {
+    overflow: hidden;
+    margin-top:25px;
+}
+/* 스폰서 구역 개별 행 플로트 잡기 */
+main > .sponser > article li {
+    float: left;
+    margin-right:48px;
+}
+/* 스폰서 구역 공통마진 잡은 후 한쪽 가장자리 없애기 */
+main > .sponser > article li:last-child {margin: 0;}
+
+/* 메인의 이벤트 배너 나열부분 */
+main > .event {
+    height: 865px;
+    background-image: url('../img/bg_pattern.png');
+}
+/* 메인의 이벤트 배너를 고정시키기 위한 relative 적용구역 */
+main > .event > article {
+    position: relative;
+}
+/* 이벤트 제목 - font는 스타일 크기 패밀리 다 지정해줘야하지만 내부중복은 가능한듯 */
+main > .event h1 {
+    padding: 40px 0;
+    font: bold italic 40px 'NanumMyeong';
+    color:#231f20;
+    text-align: center;
+}
+/* 이벤트 배너들을 절대값으로 고정시키는 공통부분. 이하 위치 개별지정 */
+main > .event a {
+    display: inline-block;
+    position: absolute;
+}
+main > .event a:nth-child(1) {top: 135px; left:0px;}
+main > .event a:nth-child(2) {top: 135px; left:335px;}
+main > .event a:nth-child(3) {top: 135px; right:0px;}
+main > .event a:nth-child(4) {bottom: 255px; left:0px;}
+main > .event a:nth-child(5) {bottom: 255px; left:335px;}
+main > .event a:nth-child(6) {bottom: 30px; right:0px;}
+main > .event a:nth-child(7) {bottom: 30px; left:0px;}
+
+/* 메인의 베이지색 배너 라인 */
+main > .quick {
+    height: 260px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #dedede;
+    box-sizing: border-box;
+}
+main > .quick > article {
+    padding-top: 50px;
+    box-sizing: border-box;
+    text-align: center;    
+}
+main > .quick ul > li {
+    float: left;
+    margin: 0 4px;
+}
+
+/* 메인 하단 공지사항 */
+main > .notice {height: 60px;}
+/* 메인 하단 공지사항 상단 패딩 잡기 */
+main > .notice > article {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+/* 공지사항 제목 */
+main > .notice > article > h2 {
+    float:left;
+    font: bold 16px "Nanum Gothic";
+}
+/* 공지사항 우측 펼쳐보기 부분 - 모양만 잡음 */
+main > .notice .more {
+    display: inline-block;
+    float: right;
+    height: 13px;
+    margin:3px 40px 0 0;
+    padding-right: 18px;
+    background: url('.../img/btn_more.png') no-repeat 100% 0;
+    font-size: 11px;
+    color: #666;
+    line-height: 13px;
+}
+/* 공지사항 항목들 */
+main > .notice ul {
+    float: left;         
+    width: 740px;
+    height: 20px;
+    margin-left: 42px;
+    line-height: 20px;            
+    overflow: hidden;
+}
+main > .notice ul > li > a {
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+    /* 넘치는 글자수 방지...가 안되네 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 푸터 */
+footer {
+    width: 100%;
+    height: auto;    
+}
+footer > div {
+    width: 100%;            
+}
+footer > div > article {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;            
+}
+
+footer > .banner1 {
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 40px;
+    box-sizing: border-box;        
+}
+
+footer > .banner2 {
+    height: 196px;
+    margin-top: 64px;    
+    background-color: rgb(0, 92, 185);
+    text-align: center;
+}
+
+footer > .banner2 > a {
+    display: inline-block;
+    margin-top: -44px;
+}
+
+footer > .content {
+    height: 205px;
+}
+
+footer .logo {
+    height: 46px;
+    margin-top: 20px;
+}
+
+footer > .content p {
+    color: #666;
+    font-size: 12px;
+    line-height: 24px;
+    margin-top: 24px;
+}
+footer > .content p > a {
+    font-size: 13px;
+    font-weight: normal;
+    color: #231f20;
+}
+
+footer > .award {
+    height: 78px;
+    background: #f5f5f5;
+}
+
+footer > .award img {
+    margin-top: 17px;
+    margin-left: 9px
+}
+
+footer > .award img:first-child {margin: 0;}
