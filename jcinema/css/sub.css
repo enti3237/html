@@ -386,3 +386,395 @@
 #sub.choice-movie > .showtime .banner {
     height: 230px;
 }
+
+        /* 예매 - 주문결재페이지 (order-confirm.html) */
+        #sub.order-confirm {}
+        #sub.order-confirm > section {
+            border: 1px solid red;
+        }
+        #sub.order-confirm > section:nth-of-type(1) {
+            height: 372.5px;
+            background: #f9f6ec;
+            padding: 50px 0;
+            box-sizing: border-box;
+        }
+        #sub.order-confirm > section:nth-of-type(2) {
+            height: auto;
+            color:#231f20;
+            padding: 38px 0 50px;
+            box-sizing: border-box;
+        }
+        #sub.order-confirm > section:nth-of-type(3) {
+            height: 50px;
+            background: #cdc197;
+        }
+        #sub.order-confirm > section:nth-of-type(4) {
+            height: 267px;
+            background: #282e34;
+        }
+
+        /* 중앙정렬 내용란 */
+        #sub.order-confirm > section > div {
+            width:980px;
+            margin: 0 auto;
+        }
+        /* 주문/결제 타이틀 */
+        #sub.order-confirm > section > div.movie-info {}
+        /* 타이틀 */
+        .movie-info > h1 {
+            font-size:28px;
+            padding: 0 0 30px;
+            border-bottom: 1px solid black;
+        }
+        .movie-info > article {
+            background:#fff;
+            height: auto;
+        }
+        .movie-info > article > div {
+            padding: 20px 30px;
+            font-size: 14px;
+            height: auto;
+        }
+        .movie-info > article > div > img {
+            display: inline-block;
+            width: 65px;
+            height: 94px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        /* 안내 테이블 전체 */
+        .movie-info > article > div > table {
+            display: inline-block;
+            margin-left: 9px;
+            width: 623px;
+            vertical-align: middle;
+            text-align: left;
+        }
+        .movie-info > article > div > table tr {}
+        .movie-info > article > div > table tr > th {
+            font-weight: normal;
+            padding-right: 30px;
+        }
+        /* 영화타이틀 (디스플레이 속성을 넣으면 colspan이 사라진다) */
+        .movie-info > article > div > table tr > th.tit {
+            font-size:18px;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        /* 내용칸 */
+        .movie-info > article > div > table tr > td {
+            border:1px solid white;
+            padding-right: 80px;
+        }
+        /* 1차 주문금액 */
+        .movie-info > article > div > h2 {
+            float:right;
+            font-size: 24px;
+            margin: 0 3px 0 0;
+            line-height: 80px;            
+        }
+        .movie-info > article > div > h2 > i {
+            font: normal 14px "나눔고딕";
+        }
+
+        /* 총주문금액 칸 */
+        .movie-info > article > div:nth-of-type(2) {
+            border-top: 1px solid #f9f6ec;
+            background: #dad2b4;
+            line-height: 74px;
+            height: auto;
+            padding: 0 50px 0 47px;
+            box-sizing: border-box;
+        }
+        /* 총주문금액 */
+        .movie-info > article > div > strong {
+            font: normal 18px "Nanum Gothic";
+        }
+        /* 액수 */
+        .movie-info > article > div > h3 {
+            float:right;
+            font-size: 30px;
+        }
+        /* 원 */
+        .movie-info > article > div > h3 > i {
+            font: bold 14px "나눔고딕";
+            margin: 0 0 0 3px;
+        }
+
+        /* 할인쿠폰사용창 */
+        #sub.order-confirm > section > div.dc-coupon {
+            position: relative;
+            width: 980px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #231f20;
+            box-sizing: border-box;
+
+        }
+        /* 타이틀 */
+        .dc-coupon > h1 {
+            padding-bottom: 20px;
+            font-size: 24px;
+        }
+        /* 쿠폰제목링크 */
+        .dc-coupon > a {
+            display: block;
+            height: 70px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: #f5f5f5;
+            padding: 25px 30px;    
+            margin-top: 20px;
+            border: 1px solid #dedede;
+            background-image: url('/jcinema/img/btn_order_off.png');
+            background-repeat: no-repeat;
+            background-position: 97%;
+            box-sizing: border-box;
+        }
+        /* 링크하면 열리는 공간 */
+        .dc-coupon > article {
+            display: none;
+            width: 100%;            
+            border: 1px solid #dedede;
+            border-top: none;
+            padding: 30px 30px 50px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .dc-coupon > article.on {
+            display: block;
+        }
+        .dc-coupon > article > p {
+        }
+        /* 클릭한 쿠폰창 */
+        .dc-coupon > a.on {
+            color: #cdc197;
+            background: url(/jcinema/img/Btn/btn_order_on.png);
+            background-color: #282e34;
+            border: 1px solid #282e34;
+        }
+        .dc-coupon > a.on > p {}
+
+        /* 롤백 띠 */
+        #sub.order-confirm > section > div.back {}
+        #sub.order-confirm > section > div.back > a {
+            float: left;
+            height: 16px;
+            margin-top: 16px;
+            padding-left: 29px;
+            color: #231f20;
+            font-size: 14px;
+            font-weight: bold;
+            box-sizing: border-box;
+            background: url(../img/btn_total_prev.png) no-repeat;
+        }
+        #sub.order-confirm > section > div.total-price {height: 198px;}
+        .total-price > div {
+            position: relative;
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            padding: 30px;
+            border-right: 1px solid #515151;
+            box-sizing: border-box;
+        }
+        .total-price > div:first-child {
+            border-left: 1px solid #515151;
+        }
+        .total-price > div.order {}
+        /* 주문금액 */
+        .total-price > div > span  {
+            display: block;
+            margin-bottom: 16px;
+            color: #cdc197;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .total-price > div.order > p {
+            color: #a7a9ac;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        /* 영화예매 */
+        .total-price > div.order > p > strong {}
+        /* 금액 - 공통 */
+        .total-price > div em {
+            float:right;
+            color: #fff;
+            font-style: normal;
+        }
+        /* 최종금액 - 공통 */
+        .total-price > div > h5 {
+            float: right;
+            font-size: 24px;
+            color: #fff;
+            margin-top: 100px;
+        }
+
+        .total-price > div.discount {}
+        /* 할인금액 */
+        .total-price > div.discount> span {} 
+        .total-price > div.discount> p {}
+        /* 영화예매 */
+        .total-price > div.discount> p > strong {}
+        /* 금액 */
+        .total-price > div.discount> p > em {}
+        /* 최종금액 */
+        .total-price > div.discount> h5 {}
+
+        .total-price > div.pay {}
+        /* 총결제금액 */
+        .total-price > div.pay > span {}
+        /* 금액 */
+        .total-price > div.pay > h4 {
+            float: right;
+            font-size: 40px;
+            color: #fff;
+        }
+        .total-price > div.pay > h4 > i {
+            font-style: normal;
+            font-size: 24px;
+        }
+        /* 결제하기 */
+        .total-price > div.pay > a {
+            display: block;
+            width: 265px;
+            height: 70px;
+            font: bold 24px "";
+            background: #b49763;
+            margin: 120px 0 0;
+            line-height: 70px;
+            text-align: center;
+        }
+
+/* 결제완료 (order-result.html) */
+#sub.order-result {width: 100%;}
+#sub.order-result > section {}
+#sub.order-result > section:nth-of-type(1) {background: #f9f6ec;}
+
+#sub.order-result > section > div {
+    width: 980px;
+    margin: 0 auto;
+}
+#sub.order-result .save-point {
+    height: auto;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+#sub.order-result .save-point > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+
+#sub.order-result .save-point > p {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666;
+    line-height: 26px;
+    margin-bottom: 24px;
+}
+#sub.order-result .save-point > p > strong {
+    color: #cd190b;
+}
+
+#sub.order-result .save-point > h2 {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    padding: 0px 30px;
+    color: #cdc197;
+    background-color: #282e34;
+    border: 1px solid #282e34;
+    box-sizing: border-box;
+}
+#sub.order-result .save-point > article {
+    width: 100%;
+    border: 1px solid #dedede;
+    border-top: none;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    overflow: hidden;
+}
+#sub.order-result .save-point > article > label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #231f20;
+}
+#sub.order-result .save-point > article > label > input {
+    margin-right: 6px;            
+}
+
+#sub.order-result .save-point > article > div {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    border-top: 1px solid #d0d0d0;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+#sub.order-result .save-point > article > div.checked {
+    border-top: 1px solid #231f20;
+}
+
+#sub.order-result .save-point .member {}
+
+#sub.order-result .save-point .member.checked > p {
+    color: #231f20;
+}
+
+#sub.order-result .save-point .member > p {
+    text-align: center;
+    font-size: 14px;
+    color: #d0d0d0;
+}
+#sub.order-result .save-point .member > p > strong {}
+
+#sub.order-result .save-point .card {
+    color: #d0d0d0;
+}
+#sub.order-result .save-point .card > span {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+#sub.order-result .save-point .card > input {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #dedede;
+    background: #f5f5f5;
+}
+
+#sub.order-result .save-point .btn {
+    border: none;
+    text-align: center;
+}
+#sub.order-result .save-point .btn > a {
+    display: inline-block;
+    width: 120px;
+    height: 40px;  
+    margin-left: 6px;
+    line-height: 40px;
+    text-align: center;          
+    border: 1px solid #999;
+    color: #231f20;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+}
+
+#sub.order-result .save-point > article > p {            
+    font-size: 12px;
+    color: #666;
+    margin-top: 26px;
+    line-height: 18px;
+}
+#sub.order-result .save-point > article > p > strong {
+    display: block;
+    color: #231f20;
+    margin-bottom: 10px;
+}
