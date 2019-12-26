@@ -1,0 +1,632 @@
+#sub.login {}
+#sub.login > section {
+    width: 100%;
+    min-height: 300px;
+    background: #f9f6ec;
+    margin-bottom: 36px;
+}
+#sub.login > section > div {
+    width:980px;
+    height: auto;
+    margin:0 auto;
+    padding: 50px 0 50px;
+    box-sizing: border-box;
+}
+
+/* 상단제목 */
+#sub.login > section > div > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+/* 콘텐츠 */
+#sub.login > section > div > article {
+    background: #fff;
+    padding: 30px;
+}
+/* 탭 3개 전체 */
+#sub.login > section > div > article > ul.tab_btn {
+    height: 53px;
+    overflow: hidden;
+}
+#sub.login > section > div > article > ul.tab_btn > li {
+    float:left;
+    width: 33.3%;
+}
+/* 상단 탭 3개 각각 */
+#sub.login > section > div > article > ul.tab_btn > li > a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #35383d;
+    line-height: 50px;
+    border-top: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #231f20;
+    box-sizing: border-box;
+}
+#sub.login > section > div > article > ul.tab_btn > li.on {}
+/* 회원 */
+#sub.login > section > div > article > ul.tab_btn > li.on > a {
+    z-index: 1;
+    border-top: 3px solid #231f20;
+    border-left: 1px solid #231f20;
+    border-right: 1px solid #231f20;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+    color: #35383d;
+    box-sizing: border-box;
+}
+#sub.login > section > div > article > div.tab {
+    min-height: 300px;
+}
+/* 탭 아래 영역 비선택부분 */
+#sub.login > section > div > article > div.tab > div {
+    display: none;
+    width: 100%;
+}
+/* 탭 아래 영역 선택부분 87번 때문에 모든 문제가 발생했다ㅏㅏㅏ*/
+#sub.login > section > div > article > div.tab > .on {
+    display:block;
+ /* float: left; */
+}
+
+/* 탭1 회원영역 */
+#sub.login > section > div > article > div.tab > div.tab1 {
+    position: relative;
+}
+.tab1 > form {
+    display: inline-block;
+    margin-top: 60px;
+    overflow: hidden;
+}
+.tab1 > form > input {
+    background: #f5f5f5;
+    padding: 10px;
+    border:1px solid #ccc;
+}
+
+.tab1 > form > div {
+    float:left;
+}
+.tab1 > form > div > label {
+    display: block;
+    margin-bottom: 10px;
+}
+/* 아이디, 비밀번호 */
+.tab1 > form > div > label > span {
+    display: inline-block;
+    width: 89px;
+    height: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #353535;
+}
+/* 아이디 비번 입력창 */
+.tab1 > form > div > label > input {
+    width: 253px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #dedede;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+.tab1 > form > input[type=submit] {
+    float:left;
+    width: 98px;
+    height: 90px;
+    padding-top: 38px;
+    margin-left: 6px;
+    text-align: center;
+    font-size: 14px;
+    color: #e5e1b0 !important;
+    background: #231f20 url('../img/ico_login.png') no-repeat 50% 19px;
+
+}
+/* 아이디 저장 */
+.tab1 > p {
+    display: block;
+    width: 450px;
+    padding: 20px 0 30px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    box-sizing: border-box;
+}
+.tab1 > p input {
+    vertical-align: bottom;
+    margin-right:4px;
+}
+/* 아이디 비번 찾기 */
+.tab1 > p > a {
+    display: inline-block;
+    width: 120px;
+    height: 16px;
+    margin-left: 40px;
+    background-image: url('../img/ico_right_arrow.gif');
+    background-repeat: no-repeat;
+    background-position: right 2px;
+}
+/* 우측 배너 */
+.tab1 > img {
+    position: absolute;
+    top:40px;
+    right:0;
+}
+
+
+/* 2번째 비회원 탭 */
+#sub.login > section > div > article > div.tab > div.tab2 {      
+    width: 100%;
+    min-height: 950px;
+    padding-top: 40px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+/* 카카오배너 */
+#sub.login div.tab2 > img {
+    border: 0;
+    margin: 0 0 30px !important;
+}
+/* 비회원 안내 */
+#sub.login div.tab2 > p {
+    padding-left: 10px;
+    background: url(/jcinema/img/bullet.gif) no-repeat 0 7px;
+    color: #666;
+    line-height: 18px;
+    margin-bottom: 38px;
+}
+/* 개인정보 안내  */
+#sub.login div.tab2 > textarea {
+    width: 100%;
+    height: 167px;
+    margin-bottom: 0;
+    padding: 20px;
+    border: 1px solid #dedede;
+    overflow-y: auto;
+    background: #f9f6ec;
+    font-size: 14px;
+    color: #666;
+    resize: none;
+    box-sizing: border-box;
+}
+#sub.login div.tab2 > label.agree  {
+    display: block;
+    margin-top: 25px;
+    margin-left: 8px;
+    font-size: 14px;
+    color: #231f20;
+    margin-bottom: 25px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid #e5e5e5;
+    box-sizing: border-box;
+}
+
+#sub.login div.tab2 > label.agree > input {
+    border:1px solid red;
+}
+/* 비회원로그인창 */
+#sub.login div.tab2 > div {
+    position: relative;
+}
+/* 안내문 */
+#sub.login div.tab2 > div > p {
+    padding-left: 10px;
+    background: url(/jcinema/img/bullet.gif) no-repeat 0 7px;
+    color: #666;
+    line-height: 18px;
+}
+/* 안내폼 */
+#sub.login div.tab2 > div > form {}
+#sub.login div.tab2 > div > form > div {
+    width: 50%;
+}
+#sub.login div.tab2 > div > form > div > label {
+    float:left; 
+    margin: 5px 0;
+}
+/* 타이틀 */
+#sub.login div.tab2 > div > form > div > label > span {
+    float:left;
+    width: 60px;
+    margin: 0 10px;
+    text-align: left;
+    color: #353535;
+    font: bold 14px "";
+}
+#sub.login div.tab2 > div > form > div > label.pass2 > span {
+    padding-left:10px;
+}
+/* 인풋타입 기본틀 */
+#sub.login div.tab2 label > input {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #dedede;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+.tab2 > div > form > div > label.name > input {width: 360px;}
+.tab2 > div > form > div > label.pass > input {width: 135px;}
+#sub.login div.tab2 > div > form > div > label.hp > input {
+    width: 109px;
+    height: 40px;
+}
+/* 모든 드롭다운 메뉴 */
+#sub.login div.tab2 > div > form > div > label > select {
+    width: 109px;
+    height: 40px;
+    line-height: 40px;
+    padding: 10px 0;
+    border: 1px solid #e8e8e8;
+}
+/* 확인 */
+#sub.login div.tab2 > div > form > input[type=submit] {
+    position: absolute;
+    bottom:-270px; left:40%;
+    width: 120px;
+    height: 40px;
+    padding: 0px 10px;
+    border: 1px solid #231f20;
+    font: bold 16px "";
+    background: #231f20;
+    color: #e5e1b0;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+/* 포스터 */
+#sub.login div.tab2 > div > img {
+    position: absolute;
+    top:0; 
+    right: 0;
+}
+
+
+/* 3번째 탭 */
+#sub.login > section > div > article > div.tab > div.tab3 {
+    width: 100%;    
+    height: auto;
+    padding-top: 40px;
+    position: relative;
+    box-sizing: border-box;
+}
+.tab3 > p {
+    padding-left: 10px;
+    background: url(/jcinema/img/bullet.gif) no-repeat 0 7px;
+    color: #666;
+    line-height: 18px;
+}
+.tab3 > a.naver {
+    display: block;
+    margin: 20px 0 30px 10%;
+    width: 220px;
+    height: 45px;
+    padding-left: 44px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    background: #18c718 url(/jcinema/img/ico_naver.gif) no-repeat 0 0;
+    border: 1px solid #0fa600;
+    box-sizing: border-box;
+}
+.tab3 > a.naver > span {
+    padding-left: 19px;
+    border-left: 1px solid #0fa600;
+}
+.tab3 > div {}
+/* 아이디, 비번찾기 */
+.tab3 > div > a  {
+    display: inline-block;
+    background: url(/jcinema/img/ico_page_blank.gif) no-repeat right center;
+    padding-right: 15px;
+    font-size: 14px;
+    color: #231f20;
+}
+.tab3 > div > a:first-child {
+    margin-left: 100px;
+    border-right: 1px solid #dcdcdc;
+    margin-right: 15px;
+}
+.tab3 > img {
+    position: absolute;
+    top:40px; right:0;
+}
+
+
+/* L포인트 아이디 하나면 */
+#sub.login > section > div > p {
+    width: 100%;
+    height: 82px;
+    padding: 25px 0;
+    background: #efebdb;
+    font-size: 13px;
+    text-align: center;
+    line-height: 32px;
+    box-sizing: border-box;
+}
+/* 회원가입 */
+#sub.login > section > div > p > a {
+    display: inline-block;
+    width: 90px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    margin-left: 6px;
+    font-size: 13px;
+    color: #231f20;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+#sub.my-cinema {}
+        #sub.my-cinema > section {}
+        #sub.my-cinema > section:first-child {
+            background: #f9f6ec;          
+        }
+        #sub.my-cinema > section > div {
+            font-size: 14px;
+            padding: 50px 0; 
+            width: 980px;
+            margin:0 auto;
+        }
+        #sub.my-cinema > section > div.my-info {    
+            font-size: 14px;
+            color: #777;
+        }
+        /* 상단제목 */
+        .my-info > h1 {
+            padding-bottom: 20px;
+            font-size: 28px;
+            color: #231f20;
+        }
+        .my-info > h2 {    
+            overflow: hidden;
+            padding: 17px 30px 17px;
+            background: #282e34;
+        }
+        .my-info > h2 > span {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .my-info > h2 > span > em {
+            font-style: normal;
+            color: #cdc197;
+        }
+        .my-info > h2 > span.name {
+            float: left;
+            color: #fff;
+        }
+        .my-info > h2 > span.grade {
+            float: right;
+            margin-right: 15px;
+            padding-right: 15px;
+            color: #c5c5c5;
+            line-height: 20px;
+        }
+        /* 오른쪽 일반 */
+        .my-info > h2 > span.grade > em {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 10px 0 10px;
+        }
+
+        .my-info > article {}
+        .my-info > article > div {
+            padding: 20px 30px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        /* 마이영화관 */
+        .my-info > article > div > strong {
+            margin-right: 20px;
+            padding-right: 20px;
+            font-size: 16px;
+            color: #231f20;
+            line-height: 32px;
+        }
+        /* 설정하기 */
+        .my-info > article > div > a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: url(/jcinema/img/btn_setting.gif) no-repeat 0 0;
+            overflow: hidden;
+            text-indent: -9999em;
+        }
+        /* div.point 와 div.coupon을 float로 잡았더니 상위섹션 높이가 고정되지 않는 것을 여기에 오버플로우 씌운 것으로 해결함!! */
+        .my-info > article > section {
+            overflow: hidden;
+        }   
+        .my-info > article > section > div.point {
+            position: relative;
+            float: left;    
+            width: 50%; 
+            height: 211px;
+            padding: 30px 30px 40px;
+            border-left: 1px solid #e5e5e5;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        /* 포인트 안내 */
+        .my-info > article > section > div.point > p:nth-of-type(3) {
+            font-size: 12px;
+            line-height: 25px;
+            color: #666;
+            letter-spacing: -1px;
+            margin-top:50px;
+        }
+        /* L포인트 (보유쿠폰정보 */
+        .my-info > article > section > div > p > strong {
+            display: inline-block;
+            height: 25px;
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #231f20;
+            line-height: 25px;
+        }
+        /* 조회하기 (등록하기 */
+        .my-info > article > section > div > p > a {
+            float: right;
+            display: block;
+            width: 67px;
+            height: 25px;
+            border: 1px solid #999;
+            font-size: 13px;
+            color: #231f20;
+            line-height: 23px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        /* 사용가능 */
+        .my-info > article > section > div.point > p > em {
+            float: left;
+            width: 55px;
+            height: 23px;
+            line-height: 23px;
+            margin-right: 39px;
+            background: #007fb4;
+            font-size: 12px;
+            color: #fff;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .my-info > article > section > div.point > p > span {
+            float: right;
+            font-size: 36px;
+            line-height: 23px;
+            letter-spacing: -1px;
+            font-family: 'linlivertine';
+            color: #231f20;
+        }
+
+        /* 쿠폰리스트 */
+        .my-info > article > section > div.coupon {
+            position: relative;
+            float:left;
+            width: 50%;
+            height: 211px;
+            padding: 30px 30px 40px;
+            border-left: 1px solid #e5e5e5;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .my-info > article > section > div.coupon > ul {}
+        .my-info > article > section > div.coupon > ul > li {
+            line-height: 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .my-info > article > section > div.coupon > ul > li > span {
+            float: right;
+        }
+        .my-info > article > section > div.coupon > ul > li > span > i {
+            font-size: 24px;
+            font-family: 'linlivertine';
+            margin: 0 3px 0 0;
+            vertical-align: -2px;
+            font-style: normal;
+        }
+
+
+        /* 예매 내역 및 그 외 정보관리창 */
+        #sub.my-cinema > section > div.reserve-history {}
+        .reserve-history > ul {
+            margin-bottom: 0;
+            position: relative;
+            width: 100%;
+        }
+        /* 여기에 float:left를 해야할 것 같은데 안 먹어서 아래로... */
+        .reserve-history > ul > li {}
+        /* 구매내역 탭 */
+        .reserve-history > ul > li > a {
+            display: block;
+            float: left;
+            width: 25%;
+            height: 49px;
+            background: #efebdb;            
+            border-bottom: 1px solid #231f20;
+            font-size: 14px;
+            color: #231f20;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        /* 탭 내부 글자 높이 중앙정렬용... 대체 이게 뭐지; */
+        .reserve-history > ul > li > a:before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .reserve-history > ul > li.on > a {
+            background: #231f20;
+            color: #cdc197;
+        }
+        .reserve-history > div {}
+        .reserve-history > div.tab {
+        }
+        .reserve-history > .tab > div {
+        }
+        .reserve-history > .tab > div.tab1 {
+            padding: 80px 0 0;
+            color: #231f20;
+        }
+        /* 구매내역이 없습니다 구역 */
+        .reserve-history > .tab > .tab1 > article {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #c0c0c0;
+        }
+        /* 느낌표 아이콘 */
+        .reserve-history > .tab > .tab1 > article > p {
+            display: inline-block;
+            height: 23px;
+            padding-left: 28px;
+            background: url(/jcinema/img/ico_nodata.png) no-repeat 0 0;
+            font-size: 18px;
+            color: #777;
+            line-height: 25px;
+        }
+        .reserve-history > .tab > .tab1 > div {}
+        /* 유의사항 회색박스 */
+        .reserve-history > .tab > .tab1 > div.pay-attention {
+            margin-top: 50px;
+            padding: 30px 0 30px 26px;
+            background: #f5f5f5;
+            box-sizing: border-box;
+        }
+        /* 유의사항 */
+        .reserve-history > .tab > .tab1 > .pay-attention > h5 {
+            padding: 0 0 10px 25px;
+            background: url(/jcinema/img/ico_warn.gif) no-repeat left top;
+            font-size: 14px;
+            font-weight: bold;
+            color: #231f20;
+        }
+        .reserve-history > .tab > .tab1 > .pay-attention > p {
+            font-size: 12px;
+            color: #666;
+            line-height: 26px;
+        }
+        .reserve-history > .tab > .tab1 > .pay-attention > p > span {
+            font-weight: bold;
+        }
+        .reserve-history > .tab > .tab1 > .pay-attention > p > em {
+            color: #cd190b !important;
+            font-style: normal;
+        }
+        
+        .reserve-history > .tab > .tab1 > .pay-attention > p > em.important {
+            font-weight: bold;
+        } 

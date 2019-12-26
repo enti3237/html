@@ -1,0 +1,66 @@
+/* footer 상단 기본메뉴 및 SNS */
+.footer_menu {}
+.footer_menu article {
+    height: 55px;
+    padding: 15px 12px 14px 0;
+    border-top: 3px solid #6a6a68;
+    border-bottom: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+.footer_menu article ul {}
+.footer_menu article ul li {
+    display: inline-block;
+}
+.footer_menu article ul.footer_menu_left {float: left;}
+.footer_menu article ul.footer_menu_left li {
+    float: left;
+    padding: 5px 9px 0 0;
+}
+.footer_menu article ul.footer_menu_left li a {
+    padding-left: 13px;
+    background: url('/dmall/img/header_menu_side.gif') left center no-repeat;
+}
+
+.footer_menu article ul.footer_menu_right {float: right;}
+.footer_menu article ul.footer_menu_right li {
+    float: left;
+    margin-right: 23px;
+}
+.footer_menu article ul.footer_menu_right li:nth-of-type(1) {
+    width: 16px;
+    height: 20px;
+    background-image: url('/dmall/img/menu/footer_menu_01.png');
+}
+.footer_menu article ul.footer_menu_right li:nth-of-type(2) {
+    width: 20px;
+    height: 20px;
+    background-image: url('/dmall/img/menu/footer_menu_02.png');
+}
+.footer_menu article ul.footer_menu_right li:nth-of-type(3) {
+    width: 20px;
+    height: 20px;
+    background-image: url('/dmall/img/menu/footer_menu_03.png');
+}
+
+/* footer 하단 업체설명 및 에스크로 */
+.footer_desc {}
+.footer_desc article {}
+.footer_desc article > div {float: left;}
+.footer_desc article div.footer_logo {
+    width: 181px;
+    padding-top: 32px;
+    text-align: center;
+}
+.footer_desc article div.company_info {
+    width: 653px;
+    padding: 20px 0 0 0;
+}
+.footer_desc article div.company_info p {
+    padding: 0 0 10px 16px;
+    line-height: 160%;
+    color: #969595;
+}
+
+.footer_desc article div.escro_right {
+    float: right;
+}

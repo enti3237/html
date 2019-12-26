@@ -1,0 +1,128 @@
+/* header 1구역. 상단배너 */
+.header_top {
+    position: relative;
+    background-color: rgb(111, 189, 251);
+    height: 80px;}
+.header_top article {}
+.header_top ul {}
+.header_top ul li {float: left;}
+.header_top ul li a {}
+.header_top ul li a img {}
+.header_top span.header_top_close {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    width: 28px;
+    height: 27px;
+    background-image: url('/dmall/img/btns/close_top.png');
+}
+
+/* header 2구역. 로그인 */
+.header_menu {
+    margin-top: 1px;
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+.header_menu article {
+    height:30px;
+    padding-top:7px;
+    box-sizing: border-box;
+}
+.header_menu ul {float: right;}
+.header_menu ul li {
+    float: left;
+    padding: 0px 9px 0 10px;
+    background: url('/dmall/img/header_menu_side.gif') left center no-repeat;
+    box-sizing: border-box;
+}
+.header_menu ul li:first-of-type {background-image: none;}
+.header_menu ul li:last-of-type {padding-right:0px;}
+.header_menu ul li a {}
+.header_menu ul li a img {
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+
+/* header 3구역. 로고-검색 */
+.header_search {
+    margin-top: 1px;
+    background: #fff;
+    border-bottom: 1px solid #e1e1e1;
+}
+.header_search article {
+    position: relative;
+    height: 90px;
+}
+.header_search div {
+    float: left;
+}
+.header_search div.logo {
+}
+.header_search div.logo a {}
+.header_search div.logo a img {}
+.header_search div.search {
+    position: absolute;
+    left: 200px;
+    top: 20px;
+    width: 350px;
+    height: 44px;
+    border: 3px solid #e70000;
+}
+.header_search div.search input {
+    float: left;
+    display: block;
+    width: 260px;
+    padding: 10px 16px;
+    margin: 5px;
+    outline: none;
+}
+.header_search div.search button {
+    float: right;
+    width: 44px;
+    height: 44px;
+    background-image: url('/dmall/img/btns/btn_search.gif');
+}
+.header_search div ul {
+    position: absolute; 
+    text-align: center;
+    right: 0;
+    top: 20px;
+    box-sizing: border-box;
+}
+.header_search div ul li {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 13px 0 13px;
+    background: url('/dmall/img/header_menu_side.gif') left center no-repeat;
+}
+.header_search div ul li:first-of-type {background:none;}
+.header_search div ul li a {}
+.header_search div ul li a img {}
+
+
+/* header 4구역. 메인카테고리 */
+.header_category {
+    width: auto;
+    border-bottom: 2px solid #000;
+}
+.header_category article {
+    height: 40px;
+}
+.header_category div {}
+.header_category div.categorys {}
+.header_category div.categorys ul {
+    float: left;
+    padding: 10px 0;
+}
+.header_category div.categorys ul li { 
+    display: inline-block;
+    padding-right: 30px;
+}
+.header_category div.categorys ul li:nth-of-type(3) {padding-left: 10px;}
+.header_category div.categorys ul li a {}
+.header_category div.categorys ul li a img {}
+.header_category div.total_cate_box {}
+.header_category div.total_cate_box table {}
+.header_category div.total_cate_box table span {}
+.header_category div.total_cate_box table span img {}

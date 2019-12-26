@@ -1,0 +1,48 @@
+section {}
+section div {border:1px solid grey;}
+section div article {border:1px solid red;}
+
+.main_slider {
+    background-color: rgb(253, 245, 232);
+    margin-bottom: 90px;
+    height: 323px !important;
+    z-index: 0;
+}
+/* 슬라이드 이미지 사이드 색 추출용 캔버스 */
+.main_slider > canvas {display: none;}
+.main_slider article {
+}
+
+.sub_slider {}
+.sub_slider article {}
+
+.line_banner_01 {}
+.line_banner_01 article {}
+.line_banner_01 article a {}
+.line_banner_01 article a img {}
+
+.mail_title {}
+.mail_title dt {}
+.mail_title dt dd {}
+
+.line_banner_02 {}
+.line_banner_02 article {}
+.line_banner_02 article a {}
+.line_banner_02 article a img {}
+
+.main_promotion {}
+.main_promotion article {}
+
+.line_banner_03 {}
+.line_banner_03 article {}
+.line_banner_03 article a {}
+.line_banner_03 article a img {}
+
+.main_bottom {}
+.main_bottom article {}
+.main_bottom article div {}
+.main_bottom article div.main_bottom_left {}
+.main_bottom article div.main_bottom_center {}
+.main_bottom article div.main_bottom_right {}
+.main_bottom article div.main_bottom_right ul {}
+.main_bottom article div.main_bottom_right ul li {}
