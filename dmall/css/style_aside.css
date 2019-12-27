@@ -1,0 +1,70 @@
+aside {
+    width: 1050px;
+    position: relative;
+    margin:0 auto;
+    z-index: 999;
+}
+aside > div {
+    position: absolute;
+    top: 12px;
+}
+aside div.wingBanner_right {
+    width: 80px;
+    right: -92px;
+}
+aside div.wingBanner_left {
+    width: 108px;
+    left: -120px;
+}
+
+.wingBanner_right ul  {}
+.wingBanner_right ul li {
+    display: block;
+    height: 26px;
+    font-size: 0;
+}
+.wingBanner_right ul li:nth-of-type(1) {background-image: url(/dmall/img/menu/right_menu_title.gif);}
+.wingBanner_right ul li:nth-of-type(2) {background-image: url(/dmall/img/menu/right_menu_01.gif);}
+.wingBanner_right ul li:nth-of-type(3) {background-image: url(/dmall/img/menu/right_menu_02.gif);}
+.wingBanner_right ul li:nth-of-type(4) {background-image: url(/dmall/img/menu/right_menu_04.gif);}
+.wingBanner_right ul li:nth-of-type(2):hover {background-image: url(/dmall/img/menu/right_menu_01_ov.gif);}
+.wingBanner_right ul li:nth-of-type(3):hover {background-image: url(/dmall/img/menu/right_menu_02_ov.gif);}
+.wingBanner_right ul li:nth-of-type(4):hover {background-image: url(/dmall/img/menu/right_menu_04_ov.gif);}
+
+.wingBanner_right div.wbr_slider {
+    padding: 7px 0 9px 0;
+    font-size: 11px !important;
+    text-align: center;
+    background-color: #fff;
+    border:1px solid #ccc;
+    border-top: none;
+}
+.wingBanner_right div.wbr_slider img {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 58px;
+    height: 58px;
+}
+
+.wingBanner_right > a {
+    display: block;
+    width: 20px;
+    height: 17px;
+    margin: 0 auto;
+    font-size: 0;
+    padding: 5px;
+    background: url('/dmall/img/menu/right_menu_top.png') center 3px no-repeat;
+}
+.wingBanner_right a img {}
+
+.wingBanner_right h3 {
+    padding-top: 25px;
+}
+
+
+aside div.wingBanner_left a {
+    display: block;
+    width: 108px;
+    font-size: 0;
+}

@@ -1,16 +1,16 @@
 /* footer 상단 기본메뉴 및 SNS */
+footer {margin-bottom: 50px;}
 .footer_menu {}
 .footer_menu article {
     height: 55px;
-    padding: 15px 12px 14px 0;
+    padding: 15px 12px 0 0;
     border-top: 3px solid #6a6a68;
     border-bottom: 1px solid #dbdbdb;
+    overflow: hidden;
     box-sizing: border-box;
 }
 .footer_menu article ul {}
-.footer_menu article ul li {
-    display: inline-block;
-}
+.footer_menu article ul li {display: block;}
 .footer_menu article ul.footer_menu_left {float: left;}
 .footer_menu article ul.footer_menu_left li {
     float: left;
@@ -44,7 +44,7 @@
 
 /* footer 하단 업체설명 및 에스크로 */
 .footer_desc {}
-.footer_desc article {}
+.footer_desc article {overflow: hidden;}
 .footer_desc article > div {float: left;}
 .footer_desc article div.footer_logo {
     width: 181px;
@@ -61,6 +61,4 @@
     color: #969595;
 }
 
-.footer_desc article div.escro_right {
-    float: right;
-}
+.footer_desc article div.escro_right {float: right;}
