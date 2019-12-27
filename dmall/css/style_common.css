@@ -1,6 +1,6 @@
 /* 초기화 */
 * { margin : 0; padding: 0; border : 0; }
-ul, ol { list-style:none; }
+ul, ol, li { list-style:none; margin:0 }
 a { color:#636363; text-decoration:none; outline: none; }
 
 body {font-family: 'NanumGothic';

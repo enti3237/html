@@ -1,37 +1,196 @@
 section {}
-section div {border:1px solid grey;}
-section div article {border:1px solid red;}
+section > div {margin-top: 40px;}
+section > div > article {}
 
 .main_slider {
-    background-color: rgb(253, 245, 232);
+    margin-top: 0;
     margin-bottom: 90px;
     height: 323px !important;
+    border-bottom: 1px solid #e1e1e1;
     z-index: 0;
 }
 /* 슬라이드 이미지 사이드 색 추출용 캔버스 */
 .main_slider > canvas {display: none;}
-.main_slider article {
+.main_slider article {}
+.main_slider .main_slider_bottom {
+    overflow: hidden;
+}
+.main_slider .main_slider_bottom ul {}
+.main_slider .main_slider_bottom ul li {
+    float: left;
+    display: block;
+    width: 20%;
+    height: 37px;
+    line-height: 37px;
+    border: 1px solid #e1e1e1;
+    border-top: 0;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .sub_slider {}
-.sub_slider article {}
+/* 자식요소에 float를 주었으면 overflow를 해줘야 높이값이 생성된다 주의 */
+.sub_slider article {
+    overflow: hidden;
+}
+.sub_slider article div {
+    float: left;
+    width: 340px;
+    height: 188px;
+    border: 1px solid #e1e1e1;
+    margin-right: 13px;
+    box-sizing: border-box;
+}
+.sub_slider article div:last-of-type {margin:0;}
 
 .line_banner_01 {}
 .line_banner_01 article {}
 .line_banner_01 article a {}
 .line_banner_01 article a img {}
 
-.mail_title {}
-.mail_title dt {}
-.mail_title dt dd {}
+.main_deal {
+    margin: 40px 0px 19px 3px;
+}
+.main_deal article {
+}
+.main_deal article > dl {
+}
+.main_deal article > dl > dt {}
+.main_deal article > dl > dd {margin-left: 33px;}
+.main_deal dd.goods {overflow: hidden;}
+/* 개별상품 전체테두리 */
+.main_deal .goods > dl {
+    border: 1px solid #dbdbdb;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    float: left;
+    width: 318px;
+    height: 421px;
+}
+/* 개별상품 이미지 */
+.main_deal .goods > dl > dt {}
+.main_deal .goods > dl > dt img {width: 318px; height: 318px;}
+/* 개별상품 설명란 */
+.main_deal .goods > dl > dd {padding: 16px 22px;}
+.main_deal .goods > dl > dd > dl {
+}
+/* 상품 제목 */
+.main_deal > article > dl > dd > dl > dd > dl > dt {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.main_deal .goods dl > dd > dl > dd {}
+.main_deal .goods dl > dd > dl > dd > ul {
+    display: table;    
+    table-layout: fixed;
+    width: 100%;
+}
+.main_deal .goods dl > dd > dl > dd > ul > li {
+    display: table-cell;
+    vertical-align: middle;
+}
+/* 상품 하단 좌측 가격란 */
+.main_deal li.first {line-height: 160%;}
+.main_deal .goods li.first span {font-size: 18px;}
+.main_deal .goods li.first span strong {font-size: 22px;}
 
+/* 상품 하단 우측 할인란 */
+.main_deal .goods li.second {
+    color: #d00000;
+    font-size: 24px;
+    width: 60px;
+    text-align: right;
+}
+.main_deal .goods li.second span strong {font-size: 40px;}
+.main_deal .main_deal_more {
+    border: 1px solid #dbdbdb;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #2a2a2a;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: -20px;
+}
+.main_deal .main_deal_more span {
+    background: url('/dmall/img/header_menu_side.gif') right 6px no-repeat;
+    padding-right: 14px;
+}
+                    
 .line_banner_02 {}
 .line_banner_02 article {}
 .line_banner_02 article a {}
 .line_banner_02 article a img {}
 
+
+/* 중앙상품란 */
 .main_promotion {}
-.main_promotion article {}
+.main_promotion article {
+    position: relative;
+}
+.main_promotion article div {
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+/* 중앙상품란 우측 메뉴 */
+.main_promotion article div.right {
+    border:1px solid red;
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 291px;
+    height: 291px;
+}
+.main_promotion .right ul {}
+.main_promotion .right ul li {}
+
+
+/* 중앙상품란 하단 슬라이더 */
+.main_promotion article div.slider > dl {
+    float: left;
+    width: 190px;
+    margin-right: 10px;
+}
+.main_promotion .slider > dl > dt {
+    position: relative;
+    margin-bottom: 20px;
+}
+.main_promotion .slider > dl > dt > a {}
+/* 베스트 상품 표기 */
+.main_promotion .slider > dl > dt > span {
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    z-index: 9990;
+}
+.main_promotion .slider > dl > dt > span > strong {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+    position: absolute;
+    bottom: 11px;
+    left: 4px;
+}
+.main_promotion .slider > dl > dd {
+    padding: 0px 2px;
+    margin-top: 17px;
+}
+.main_promotion .slider > dl > dd > ul {}
+.main_promotion .slider > dl > dd > ul > li {}
+.main_promotion .slider > dl > dd > ul > li.cut_text {
+    color: #000;
+    margin-bottom: 7px;
+}
+.main_promotion .slider > dd > dl > ul > li.price {
+    color: #000;
+}
+
+
+
+
 
 .line_banner_03 {}
 .line_banner_03 article {}
