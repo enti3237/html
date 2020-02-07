@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dmall에 방문해주셔서 감사합니다.</title>
+    <link rel="stylesheet" href="../css/style_common.css">
+    <link rel="stylesheet" href="../css/style_header.css">
+    <link rel="stylesheet" href="../css/style_main.css">
+    <link rel="stylesheet" href="../css/style_aside.css">
+    <link rel="stylesheet" href="../css/style_footer.css">
+    <link rel="stylesheet" href="../css/style_member.css">
+</head>
+
+<body>
+    <header>
+        <div class="header_top">
+            <article>
+                <ul>
+                    <li><a href=""><img src="../img/banner/header_top_1.jpg" alt="올리빙스탠드옷걸이"></a></li>
+                    <li><a href=""><img src="../img/banner/header_top_2.jpg" alt="쓰레기비닐봉투"></a></li>
+                    <li><a href=""><img src="../img/banner/header_top_3.jpg" alt="벽걸이"></a></li>
+                    <li><a href=""><img src="../img/banner/header_top_4.jpg" alt="코털제거기"></a></li>
+                </ul>
+            </article>
+            <span class="header_top_close"></span>
+        </div>
+        <div class="header_menu">
+            <article>
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">나의쇼핑정보<img src="../img/btns/my_shopping.png" alt="나의쇼핑정보"></a></li>
+                    <li><a href="">장바구니</a></li>
+                    <li><a href="">고객센터</a></li>
+                </ul>
+            </article>
+        </div>
+        <div class="header_search">
+            <article>
+                <div class="logo">
+                    <a href="../index.html"><img src="../img/shop_logo.gif" alt="LOGO"></a>
+                </div>
+                <div class="search">
+                    <form action="#" name="search_form" method="GET">
+                        <input type="text" placeholder="" />
+                        <button></button>
+                    </form>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#"><img src="../img/banner/header_search_01.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="../img/banner/header_search_02.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="../img/banner/header_search_03.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+        <nav class="header_category">
+            <article>
+                <div class="categorys">
+                    <ul>
+                        <li><a href="#"><img src="../img/menu/header_new_menu01.png" alt="오늘의딜"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu02.png" alt="다이소"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu03.png" alt="수납/정리"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu04.png" alt="주방/욕실/청소"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu05.png" alt="가구/인테리어"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu06.png" alt="사무/문구/디지털"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu07.png" alt="가전/레저"></a></li>
+                        <li><a href="#"><img src="../img/menu/header_new_menu08.png" alt="유아동/미용/패션"></a></li>
+                    </ul>
+                </article>
+            </div>
+            <!-- <div class="total_cate_box hidden">
+                <article>
+                    <table>
+                        <tr></tr>
+                    </table>
+                    <span class="total_cate_close"><img src="" alt=""></span>
+                </article>
+            </div> -->
+        </nav>
+    </header>
+
+    <section>
+        <div class="join_input">
+            <article>
+                <div class="join">
+                    <h4>필수 입력</h4>
+                    <div>
+                        <ul>
+                            <li>
+                                <label>휴대폰번호</label>
+                                <input type="text" placeholder="휴대폰" maxlength="11" name="join_pcs">
+                                <p class="alert">휴대폰 번호를 입력해주세요.</p>
+                            </li>
+                            <li>
+                                <label>이름</label>
+                                <input type="text" placeholder="이름" maxlength="11" name="join_name">
+                                <p>이름을 입력해주세요.</p>
+                            </li>
+                            <li>
+                                <label>이메일 주소(아이디)</label>
+                                <input type="text" placeholder="이메일 주소 (아이디)" maxlength="11" name="join_email">
+                                <p>이메일 주소를 입력해주세요.</p>
+                            </li>
+                            <li>
+                                <label>비밀번호(영문+숫자6~16자)</label>
+                                <input type="text" placeholder="비밀번호 (영문+숫자6~16자)" maxlength="11" name="join_pass">
+                            </li>
+                            <li>
+                                <label>비밀번호 재입력</label>
+                                <input type="text" placeholder="비밀번호 재입력" maxlength="11" name="join_pass2">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="birth">
+                    <h4>선택 입력</h4>
+                    <div>
+                        <label>생년월일(예:19801231)</label>
+                        <input type="text" placeholder="생년월일(예:19801231)" maxlength="8" name="join_birthday">
+                    </div>
+                </div>
+                <div class="agree">
+                    <div>
+                        <h4><input type="checkbox"> 다이소몰 전체 이용약관 동의(선택동의 포함)</h4>
+                        <ul>
+                            <li><input type="checkbox"> 만 14세 이상입니다. <span>(필수)</span></li>
+                            <li><input type="checkbox"> 이용약관 동의 <span>(필수)</span></li>
+                            <li><input type="checkbox"> 개인정보 수집 및 이용 동의 <span>(필수)</span></li>
+                            <li><input type="checkbox"> 개인정보 수집 및 이용 및 마케팅 정보 수신 동의 (선택)</li>
+                        </ul>
+                        <div>
+                            <ul>
+                                <li><input type="checkbox"> 이메일</li>
+                                <li><input type="checkbox"> 문자(SMS)</li>
+                                <li><input type="checkbox"> 전화</li>
+                            </ul>
+                        </div>
+                        <p>광고정보 수신동의를 하시면 상품 및 이벤트 정보를 받으실 수 있습니다.</p>
+                    </div>
+                </div>
+                <strong>＊ 선택 수집되는 정보에 대한 동의는 거부하실 수 있으며, 
+                    거부하시더라도 회원가입등 기본 서비스 이용에는 제한을 받지 않습니다.</strong>
+                <button type="button" class="join_btn">가입하기</button>
+            </article>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <div class="footer_menu">
+            <article>
+                <ul class="footer_menu_left">
+                    <li><a href="#">입점제안</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li><a href="#">다이소매장찾기</a></li>
+                </ul>
+                <ul class="footer_menu_right">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </article>
+        </div>
+        <div class="footer_desc">
+            <article>
+                <div class="footer_logo">
+                    <a href="#">
+                        <img src="../img/footer_logo.png" alt="dmall">
+                    </a>
+                </div>
+                <div class="company_info">
+                    <p>
+                        (주)가나다쇼핑 l 대표이사 : 유관순 l 사업장소재지: 서울특별시 강남구 양재천로 167 아성빌딩 5F. <br>
+                        사업자등록번호 : 220-87-69701 | 통신판매업신고 : 2008-서울강남-1823 | 의료기기 판매업 신고번호 : 제 5664호 <br>
+                        개인정보보호책임자 : 이순신 | 호스팅제공자 : (주)가나다쇼핑 <br>
+                        고객센터 : 1688-5700 l 팩스 : 02.573.8513 | Mail : help@ganadamall.co.kr ㅣ<a href="#">사업자정보확인</a>
+                    </p>
+                </div>
+                <div class="escro_right"></div>
+            </article>
+        </div>
+    </footer>
+</body>
+</html>

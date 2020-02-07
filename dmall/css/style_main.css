@@ -181,7 +181,6 @@ section > div > article {}
     height:40px;
     top: 40%;
     font-size: 0;
-    border:1px solid red;
 }
 .main_promotion article div.slider > span.front {left:0;}
 .main_promotion article div.slider > span.back {right:0;}

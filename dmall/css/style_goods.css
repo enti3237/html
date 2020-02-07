@@ -14,7 +14,7 @@ section > div.content_goods {}
     display: block;
     margin-right: 8px;
     height: 23px !important;
-    line-height: 25px;
+    line-height: 27px;
 }
 .content_goods div.category ul li select {
     width: 160px;
@@ -447,7 +447,6 @@ section > div.content_goods {}
 .goods_detail > article > div > table tr > td {
     padding: 12px 14px;
     border-bottom: solid 1px #e7e5e5;
-    height: 39px;
     color: #7b7b7b;
     text-align: center;
     line-height: 150%;

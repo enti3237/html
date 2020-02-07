@@ -57,10 +57,12 @@
 .header_search div {
     float: left;
 }
-.header_search div.logo {
-}
+.header_search div.logo {}
 .header_search div.logo a {}
-.header_search div.logo a img {}
+.header_search div.logo a img {
+    width: 176px; 
+    height: 88px;
+}
 .header_search div.search {
     position: absolute;
     left: 200px;
